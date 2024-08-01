@@ -1,0 +1,31 @@
+.backgroundPitch{
+  background-image: url("/assets/pitchImage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  height: 40vh;
+  width: 60%;
+  margin : 80px auto 80px
+}
+
+.textPitch{
+  width: 58%;
+  height: 70%;
+  position: absolute;
+  left: 40%;
+  top: 20%;
+  backdrop-filter: blur(30px); /* Appliquer un flou de 10 pixels */
+  -webkit-backdrop-filter: blur(30px); /* Préfixe pour les navigateurs basés sur WebKit */
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.textPitch > h3{
+  font-size: 2vw;
+}
+
+.textPitch > p{
+  font-size: 1vw;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+
+<a  [routerLink]="card.hrefUrl">
+    <div class="card">
+      <div class="card-header">
+        <img [src]=card.urlCardPicture [alt]=card.title />
+      </div>
+      <div class="card-body">
+        <h4>{{card.title}}</h4>
+        <p>{{card.description}}</p>
+        <div class="card-footer">
+          <img *ngFor="let programingLanguage of card.programingLanguages"
+               [src] ="programingLanguage.logoUrl"
+               [alt] = "programingLanguage.name">
+        </div>
+      </div>
+    </div>
+</a>
+</div>

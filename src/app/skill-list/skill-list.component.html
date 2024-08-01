@@ -1,0 +1,115 @@
+<h1>Atouts et compétences</h1>
+<div class="dividerTitle"></div>
+
+<!--section hardSkills-->
+<section class="container hardSkillsSection w-50" #container>
+  <div class="mainTitle">
+    <h2>Technical Skills</h2>
+    <i class="fa-solid fa-code fa-2x me-3 "></i>
+  </div>
+  <div class="container" >
+    <div class="row">
+      <div class="container d-flex flex-row flex-wrap align-items-start">
+
+        <!--programingLanguageSection-->
+        <div class="secondTitle">
+          <i class="fa-solid fa-globe fa-2x"></i>
+          <h3>Langages</h3>
+        </div>
+        <div class="container col-6 d-flex flex-column" *ngFor="let skill of hardskillsList">
+          <div class="container skillsName">
+            <span class="iconify" [attr.data-icon]="skill.programingLanguage.logoUrl" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+            <span class="align-self-start align-items-center ms-4">{{ skill.programingLanguage.name }}</span>
+          </div>
+          <div class="progress skill-bar">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [attr.aria-valuenow]="skill.value"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 0;"> <!-- Initial width set to 0 for animation -->
+            </div>
+          </div>
+        </div>
+
+        <!--frameworkSection-->
+        <div class="secondTitle">
+          <i class="fa-solid fa-book-atlas fa-2x"></i>
+          <h3>Frameworks</h3>
+        </div>
+        <div class="container col-6 d-flex flex-column" *ngFor="let skill of framworkList">
+          <div class="container skillsName">
+            <span class="iconify" [attr.data-icon]="skill.programingLanguage.logoUrl" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+            <span class="align-self-start align-items-center ms-4">{{ skill.programingLanguage.name }}</span>
+          </div>
+          <div class="progress skill-bar">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              [attr.aria-valuenow]="skill.value"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 0;"> <!-- Initial width set to 0 for animation -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--section testLevel-->
+  <div class="testSection">
+    <div class="secondTitle">
+      <i class="fa-solid fa-circle-question fa-2x"></i>
+      <h2>Level</h2>
+    </div>
+
+
+
+    <!--jauge-->
+    <div class="container d-flex flex-column align-items-center">
+          <div class="container w-50">
+              <div class="progress skill-bar">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  [style.width.%]="choice[index].purcent"> <!-- Initial width set to 0 for animation -->
+                </div>
+              </div>
+          </div>
+    </div>
+    <!--commande-->
+    <div class="container">
+      <div class="row">
+        <div class="levelTest">
+          <i class="fa-solid fa-angles-right fa-2x fa-rotate-180" (click)="previousChoice()"></i>
+          <p>{{choice[index].option}}</p>
+          <i class="fa-solid fa-angles-right fa-2x" (click)="nextChoice()"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--DividerSection-->
+  <div class="dividerSection">
+      <span class="iconify" data-icon="gis:union" data-inline="false"
+            style="color: white; width: 3.5rem; height: 3.5rem;">
+      </span>
+  </div>
+</section>
+<!--Section softSkills-->
+<section class="container softSkillsSection w-50">
+  <div class=" mainTitle">
+    <h2>Soft Skills</h2>
+    <i class="fa-solid fa-users-gear fa-2x me-3 me-0"></i>
+  </div>
+  <div class="d-flex flex-row justify-content-center flex-wrap">
+    @for (skill of softSkillsList; track skill.title){
+      <app-skill class="m-3" [skill]="skill"/>
+    }
+  </div>
+</section>
+
+
