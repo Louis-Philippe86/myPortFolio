@@ -1,0 +1,65 @@
+package com.apiportefolio.hardSkills;
+
+import java.util.List;
+import java.util.Set;
+
+import com.apiportefolio.language.Language;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
+@Entity
+@Table(name = "hardSkills")
+public class HardSkill {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @ManyToMany
+    @JoinTable(
+        name = "hard_skills_languages",
+        joinColumns = @JoinColumn(name = "hard_skills_id"),
+        inverseJoinColumns = @JoinColumn(name = "language_id")
+    )
+    private Set<Language> languages; // Utiliser Set ou List pour stocker les entités Language
+
+    
+    private int value;
+
+    // Default constructor
+    public HardSkill() {
+    }
+
+    // Getters and setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Set<Language> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(Set<Language> languages) {
+        this.languages = languages;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+}

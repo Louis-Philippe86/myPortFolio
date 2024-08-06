@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-* {
-  box-sizing: border-box;
+a{
+  text-decoration: none;
 }
 
 .container {
@@ -16,6 +15,7 @@
   overflow: hidden;
   width: 300px;
   transition: transform 0.3s, box-shadow 0.3s;
+
 }
 .card-header img {
   width: 100%;
@@ -26,34 +26,38 @@
 .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: flex-start;
   padding: 20px;
-  min-height: 250px;
+  min-height: 12rem;
 }
-.tag {
-  background: #cccccc;
-  border-radius: 50px;
-  font-size: 12px;
-  margin: 0;
-  color: #fff;
-  padding: 2px 10px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
+
 
 .card-body p {
   font-size: 13px;
   margin: 0 0 40px;
 }
-.card-footer {
+.cardFooter {
   display: flex;
-  margin-top: auto;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap;
+  padding: 20px;
+  height: 8rem;
+  span{
+    margin-right: 10px;
+  }
+
 }
-.card-footer img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+
+.language{
   margin-right: 10px;
+  margin-bottom: 20px;
 }
+
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
 

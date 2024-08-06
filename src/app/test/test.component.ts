@@ -1,64 +1,35 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {UserService} from "./user.service";
+import {User} from "./user/user";
+import {SharedModule} from "../shared/shared.module";
+
 
 @Component({
   selector: 'app-test',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent implements AfterViewInit {
+export class TestComponent implements OnInit{
 
-  index : number = 3
-  choice =[
-    {option : "Hein ??" , purcent : 2},
-    {option : "Novice" , purcent : 20},
-    {option : "Débutant" , purcent : 40},
-    {option : "Intermediaire" , purcent : 60},
-    {option : "Expert" , purcent : 80},
-    {option : "Maître de l'univers incontesté" , purcent : 100},
-  ]
+  users : any;
 
-  skills = [
-    { name: 'html 5', value: 80 },
-    { name: 'CSS 3', value: 85 },
-    { name: 'Bootstrap', value: 75 },
-    { name: 'javascript', value: 55 },
-    { name: 'jquery', value: 50 },
-    { name: 'php', value: 30 },
-    { name: 'photoshop', value: 90 }
-  ];
+  constructor(private userService: UserService) { }
 
-  @ViewChild('container', { static: true }) container!: ElementRef;
-
-  ngAfterViewInit() {
-    setTimeout(() => this.animateProgressBars(), 0);
-  }
-
-  animateProgressBars() {
-    const bars = this.container.nativeElement.querySelectorAll('.progress-bar');
-    bars.forEach((bar: HTMLElement) => {
-      const value = bar.getAttribute('aria-valuenow');
-      if (value) {
-        bar.style.width = `${value}%`;
-      }
+  ngOnInit(): void {
+    this.userService.getUsers().subscribe(data =>{
+      this.users = data
+    console.log(data)
     });
-  }
-  nextChoice() {
-    if (this.index < this.choice.length - 1) {
-      this.index++;
 
-    }
   }
-  previousChoice() {
-    if (this.index > 0) {
-      this.index--;
 
-    }
-  }
+
 }

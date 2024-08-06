@@ -1,0 +1,28 @@
+<h1>Expériences professionnels</h1>
+<div class="dividerTitle"></div>
+<div *ngFor="let work of works; let i = index " [ngClass]="{'pair' : i % 2 !== 0}" class="container workXp">
+  <div class="card" >
+    <div class="cardTitle">
+      <h4 class="jobTitle">{{work.title}}</h4>
+      <span class="date">{{work.date}}</span>
+    </div>
+    <div class="cardBody">
+      <div class="image">
+        <img [src]="work.imageUrl" [alt]="i" >
+      </div >
+      <div >
+        <ul class="task" *ngFor="let task of work.tasks">
+          <li><span class="custom-bullet"></span>{{task}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cardFooter">
+      <span>{{work.company.name}}</span>
+      <span>à {{work.company.city}}</span>
+    </div>
+  </div>
+</div>
+
+
+
+

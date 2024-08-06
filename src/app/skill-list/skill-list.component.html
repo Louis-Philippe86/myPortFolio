@@ -2,72 +2,28 @@
 <div class="dividerTitle"></div>
 
 <!--section hardSkills-->
-<section class="container hardSkillsSection w-50" #container>
+<section class="container hardSkillsSection w-50" >
   <div class="mainTitle">
     <h2>Technical Skills</h2>
     <i class="fa-solid fa-code fa-2x me-3 "></i>
   </div>
-  <div class="container" >
-    <div class="row">
-      <div class="container d-flex flex-row flex-wrap align-items-start">
-
-        <!--programingLanguageSection-->
-        <div class="secondTitle">
-          <i class="fa-solid fa-globe fa-2x"></i>
-          <h3>Langages</h3>
-        </div>
-        <div class="container col-6 d-flex flex-column" *ngFor="let skill of hardskillsList">
-          <div class="container skillsName">
-            <span class="iconify" [attr.data-icon]="skill.programingLanguage.logoUrl" data-inline="false" style="width: 2rem; height: 2rem;"></span>
-            <span class="align-self-start align-items-center ms-4">{{ skill.programingLanguage.name }}</span>
-          </div>
-          <div class="progress skill-bar">
-            <div
-              class="progress-bar"
-              role="progressbar"
-              [attr.aria-valuenow]="skill.value"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              style="width: 0;"> <!-- Initial width set to 0 for animation -->
-            </div>
-          </div>
-        </div>
-
-        <!--frameworkSection-->
-        <div class="secondTitle">
-          <i class="fa-solid fa-book-atlas fa-2x"></i>
-          <h3>Frameworks</h3>
-        </div>
-        <div class="container col-6 d-flex flex-column" *ngFor="let skill of framworkList">
-          <div class="container skillsName">
-            <span class="iconify" [attr.data-icon]="skill.programingLanguage.logoUrl" data-inline="false" style="width: 2rem; height: 2rem;"></span>
-            <span class="align-self-start align-items-center ms-4">{{ skill.programingLanguage.name }}</span>
-          </div>
-          <div class="progress skill-bar">
-            <div
-              class="progress-bar"
-              role="progressbar"
-              [attr.aria-valuenow]="skill.value"
-              aria-valuemin="0"
-              aria-valuemax="100"
-              style="width: 0;"> <!-- Initial width set to 0 for animation -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="container">
+    <app-hard-skill
+      [hardskillsList] = "languageSkills"
+      [section]="{title : 'Language', logo : 'fa-solid fa-globe fa-2x'}"
+      />
+    <app-hard-skill
+      [hardskillsList] = "frameworkList"
+      [section]="{title : 'Framworks', logo : 'fa-solid fa-book-atlas fa-2x'}"
+    />
   </div>
-
   <!--section testLevel-->
   <div class="testSection">
     <div class="secondTitle">
       <i class="fa-solid fa-circle-question fa-2x"></i>
       <h2>Level</h2>
     </div>
-
-
-
-    <!--jauge-->
+  <!--jauge-->
     <div class="container d-flex flex-column align-items-center">
           <div class="container w-50">
               <div class="progress skill-bar">
@@ -76,7 +32,7 @@
                   role="progressbar"
                   aria-valuemin="0"
                   aria-valuemax="100"
-                  [style.width.%]="choice[index].purcent"> <!-- Initial width set to 0 for animation -->
+                  [style.width.%]="levelChoices[index].purcent"> <!-- Initial width set to 0 for animation -->
                 </div>
               </div>
           </div>
@@ -85,9 +41,9 @@
     <div class="container">
       <div class="row">
         <div class="levelTest">
-          <i class="fa-solid fa-angles-right fa-2x fa-rotate-180" (click)="previousChoice()"></i>
-          <p>{{choice[index].option}}</p>
-          <i class="fa-solid fa-angles-right fa-2x" (click)="nextChoice()"></i>
+          <i class="fa-solid fa-angles-right fa-2x fa-rotate-180" (click)="previousChoiceLevel()"></i>
+          <p>{{levelChoices[index].option}}</p>
+          <i class="fa-solid fa-angles-right fa-2x" (click)="nextChoiceLevel()"></i>
         </div>
       </div>
     </div>
@@ -107,7 +63,7 @@
   </div>
   <div class="d-flex flex-row justify-content-center flex-wrap">
     @for (skill of softSkillsList; track skill.title){
-      <app-skill class="m-3" [skill]="skill"/>
+      <app-soft-skill class="m-3" [skill]="skill"/>
     }
   </div>
 </section>

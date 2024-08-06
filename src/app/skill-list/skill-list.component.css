@@ -96,7 +96,7 @@ h1{
   height: 6.5rem;
   background:  var(--color_1);
   border-radius: 100%;
-  z-index: 999999;
+  z-index: 2;
 
 
 }
@@ -107,7 +107,7 @@ h1{
   color: white;
   justify-content: space-between;
   width: 50%;
-  margin: auto;
+  margin: 10px auto auto;
 
   i{
     flex: 0 0 auto; /* Ensure icons don’t grow or shrink */
@@ -118,34 +118,22 @@ h1{
     text-align: center; /* Center text horizontally */
   }
 }
-
-
-
-.progress {
-  height: 20px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-
-}
-
-.progress .skill .val {
-  float: right;
-  font-style: normal;
-  margin: 0 20px 0 0;
-
-}
-
 .progress-bar {
   text-align: left;
   border-radius: 20px;
   transition: width 1s ease-in-out; /* Ensure transition is set */
   background-color: var(--color_4);
-  margin-left: -5px ;
-  width: 0; /* Initial width set to 0 for animation */
-
-
+  margin-left: -5px;
+  width: 0;
+}
+.progress {
+  height: 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
 
 }
+
+
 
 
 

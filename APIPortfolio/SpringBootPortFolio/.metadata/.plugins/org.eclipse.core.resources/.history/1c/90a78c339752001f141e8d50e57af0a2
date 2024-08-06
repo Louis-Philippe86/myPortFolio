@@ -1,0 +1,11 @@
+package snippet;
+
+public class Snippet {
+	public static void main(String[] args) {
+		com.apiportefolio.users
+		/API/src/main/java/com/apiportefolio/users/User.java
+		/API/src/main/java/com/apiportefolio/users/UserController.java
+		/API/src/main/java/com/apiportefolio/users/UserRepository.java
+	}
+}
+

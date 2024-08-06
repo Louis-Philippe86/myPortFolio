@@ -1,9 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CardService} from "../services/card-service.service";
 import {Card} from "../models/card";
 import {NgForOf} from "@angular/common";
 import {CardComponent} from "../card/card.component";
-import {RouterLink} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, provideRouter, Router, RouterLink, RouterLinkWithHref} from "@angular/router";
+import {DatasService} from "../services/datas.service";
+import {routes} from "../app.routes";
+
 
 
 @Component({
@@ -19,13 +21,24 @@ import {RouterLink} from "@angular/router";
 })
 export class CardListComponent implements OnInit{
   cardsMainMenu!: Card[]
+  cardsProject! : Card[]
+  path! : string
 
-  constructor(private cardService: CardService) {
+  constructor(private datasService: DatasService, private router : Router ) {
+    this.router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        this.path =  e.url
+      }
+    });
   }
 
   ngOnInit(): void {
-    this.cardsMainMenu = this.cardService.getCardsMainMenu()
-  }
+    this.cardsMainMenu = this.datasService.getCardsMainMenu()
+    this.cardsProject = this.datasService.getCardsProject()
+
+    }
+
+
 
 
 }

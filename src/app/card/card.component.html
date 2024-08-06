@@ -1,6 +1,5 @@
 <div class="container">
-
-<a  [routerLink]="card.hrefUrl">
+  <a [routerLink]="card.hrefUrl">
     <div class="card">
       <div class="card-header">
         <img [src]=card.urlCardPicture [alt]=card.title />
@@ -8,12 +7,15 @@
       <div class="card-body">
         <h4>{{card.title}}</h4>
         <p>{{card.description}}</p>
-        <div class="card-footer">
-          <img *ngFor="let programingLanguage of card.programingLanguages"
-               [src] ="programingLanguage.logoUrl"
-               [alt] = "programingLanguage.name">
-        </div>
       </div>
+      @if(card.programingLanguages !== undefined){
+        <div class="cardFooter">
+          <div class="language" *ngFor="let programingLanguage of card.programingLanguages">
+            <span class="iconify" [attr.data-icon]="programingLanguage.logoUrl" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+            <span class="">{{ programingLanguage.name }}</span>
+          </div>
+        </div>
+      }
     </div>
-</a>
+  </a>
 </div>

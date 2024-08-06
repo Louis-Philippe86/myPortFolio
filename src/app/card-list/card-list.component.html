@@ -1,7 +1,14 @@
 <div class="container d-flex flex-row justify-content-center">
-  @for (card of cardsMainMenu; track card.title){
-
-    <app-card [card]="card"/>
-
+  @if(path === '/'){
+    @for (card of cardsMainMenu; track card.title){
+      <app-card [card]="card"/>
+    }
   }
+  @if(path === '/projects'){
+    @for (card of cardsProject; track card.title){
+      <app-card [card]="card"/>
+    }
+  }
+
+
 </div>
