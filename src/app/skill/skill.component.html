@@ -1,0 +1,24 @@
+<div class="row" #container>
+  <div class="container d-flex flex-row flex-wrap align-items-start" #container>
+    <div class="secondTitle">
+      <i [class]="section.logo" ></i>
+      <h3>{{section.title}}</h3>
+    </div>
+    <div class="container col-6 d-flex flex-column" *ngFor="let skill of skillsList ; let i=index">
+      <div class="container skillsName">
+        <span class="iconify" [attr.data-icon]="skill.language.logo" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+        <span class="align-self-start align-items-center ms-4">{{ skill.language.name }}</span>
+      </div>
+      <div class="progress skill-bar">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          [attr.aria-valuenow]="skill.level"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="width:0;"> <!-- Initial width set to 0 for animation -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

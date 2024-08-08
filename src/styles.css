@@ -1,28 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
-  --green_1: #234d20;
-  --green_2: #36802d;
-  --green_3: #77ab59;
-  --green_4: #c9df8a;
-  --green_5: #f0f7da;
-  --blue_1: #244f76;
-  --blue_2: #1d5c88;
-  --blue_3: #3b759e;
-  --blue_4: #5e92c1;
-  --blue_5: #6ba5cf;
-  --color_1:#839b98;
-  --color_2:#c7dbd9;
-  --color_3:#528d85;
-  --color_4:#4d6663;
+  --color_1:#F8EDE3;
+  --color_2: #000000;
+  --color_3:#BC9F8B;
+  --color_4:#DFD3C3;
   --color_5:#3a5451;
+  --color_6:#333742;
 
+}
+
+
+.dividerTitle {
+  height: 2px;
+  width: 50vw;
+  margin: 0 auto 50px;
+  background: linear-gradient(to left, var(--color_2), var(--color_5));
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 body {
   font-family : 'Montserrat', sans-serif !important;
+  background-image: url("./assets/test.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
 
 header, footer{
-  background-color: var(--color_1);
+  background-color: var(--color_6);
+  color: white;
 }
 
 footer{

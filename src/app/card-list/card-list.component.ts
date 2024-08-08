@@ -5,6 +5,7 @@ import {CardComponent} from "../card/card.component";
 import {ActivatedRoute, NavigationEnd, provideRouter, Router, RouterLink, RouterLinkWithHref} from "@angular/router";
 import {DatasService} from "../services/datas.service";
 import {routes} from "../app.routes";
+import {CardService} from "../services/card.service";
 
 
 
@@ -20,11 +21,11 @@ import {routes} from "../app.routes";
   styleUrl: './card-list.component.css'
 })
 export class CardListComponent implements OnInit{
-  cardsMainMenu!: Card[]
-  cardsProject! : Card[]
+  cardsMainMenu: Card[] = []
+  cardsProject : Card[] = []
   path! : string
 
-  constructor(private datasService: DatasService, private router : Router ) {
+  constructor(private cardService : CardService, private router : Router ) {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         this.path =  e.url
@@ -33,12 +34,15 @@ export class CardListComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.cardsMainMenu = this.datasService.getCardsMainMenu()
-    this.cardsProject = this.datasService.getCardsProject()
+    this.cardService.getCards().subscribe((cards : any) =>{
+      for (let card of cards) {
+        if(card.project){
+          this.cardsProject.push(card)
+        }else{
+          this.cardsMainMenu.push(card)
+        }
+      }
+    })
 
-    }
-
-
-
-
+  }
 }

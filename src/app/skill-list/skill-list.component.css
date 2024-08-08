@@ -3,18 +3,15 @@ h1{
   margin: 30px 0 30px 0;
   font-size: 50px;
   font-weight: 600;
-  background-image: linear-gradient(to right, var(--blue_1), var(--green_1));
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: var(--color_4);
 }
 
-.dividerTitle {
-  height: 2px;
-  width: 50vw;
-  margin: 0 auto 50px;
-  background: linear-gradient(to left, var(--color_2), var(--green_5));
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+.sectionMainTitle{
+
+backdrop-filter: blur(30px);
+-webkit-backdrop-filter: blur(30px);
+  width: 50%;
 }
 
 .mainTitle{
@@ -24,7 +21,7 @@ h1{
   align-items: center;
   margin :  20px 0 10px 10px;
   vertical-align: middle;
-  color: white;
+  color: var(--color_2);
 }
 
 .secondTitle{
@@ -33,7 +30,7 @@ h1{
   justify-content: center;
   align-items: center;
   vertical-align: middle;
-  color: white;
+  color: var(--color_2);
   padding-top: 10px;
   margin: 20px auto;
   border-top : 2px solid white;
@@ -54,18 +51,18 @@ h1{
 }
 
 .softSkillsSection {
-  background: var(--color_4);
+  background: var(--color_1);
   border-radius: 0 0 20px 20px ;
 
 }
 .hardSkillsSection{
   position: relative;
-  background:  var(--color_1);
+  background:  var(--color_4);
   border-radius: 20px 20px 0 0;
 }
 .skillsName{
   position: relative;
-  color: white;
+  color: var(--color_2);
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 5px;
@@ -73,7 +70,7 @@ h1{
 }
 
 .testSection{
-  color: white;
+  color: var(--color_2);
   padding-top: 10px;
   margin: 20px auto;
   vertical-align: middle;
@@ -94,7 +91,7 @@ h1{
   align-items: center;
   width: 6.5rem;
   height: 6.5rem;
-  background:  var(--color_1);
+  background:  var(--color_4);
   border-radius: 100%;
   z-index: 2;
 
@@ -104,7 +101,7 @@ h1{
   position: relative;
   display: flex;
   align-items: center; /* Center items vertically */
-  color: white;
+  color: var(--color_2);
   justify-content: space-between;
   width: 50%;
   margin: 10px auto auto;
@@ -122,7 +119,7 @@ h1{
   text-align: left;
   border-radius: 20px;
   transition: width 1s ease-in-out; /* Ensure transition is set */
-  background-color: var(--color_4);
+  background-color: var(--color_3);
   margin-left: -5px;
   width: 0;
 }

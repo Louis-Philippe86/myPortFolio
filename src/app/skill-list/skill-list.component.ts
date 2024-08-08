@@ -1,15 +1,14 @@
 import { Component, Input, OnInit} from '@angular/core';
-import {Skill} from "../models/skill";
 import {ModalComponent} from "../modals/modal.component";
 import {SharedModule} from "../shared/shared.module";
 import {SoftSkillComponent} from "../soft-skill/soft-skill.component";
 import {RouterOutlet} from "@angular/router";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {DatasService} from "../services/datas.service";
-import {HardSkillsService} from "../services/hardSkills.service";
-import {HardSkillComponent} from "../hard-skill/hard-skill.component";
+import {SkillComponent} from "../skill/skill.component";
 import {HardSkills} from "../models/HardSkills";
-import {Observable} from "rxjs";
+import {SoftSkill} from "../models/SoftSkill";
+import {SkillsService} from "../services/skills.service";
 
 
 @Component({
@@ -22,36 +21,37 @@ import {Observable} from "rxjs";
     SoftSkillComponent,
     NgOptimizedImage,
     NgForOf,
-    HardSkillComponent
+    SkillComponent
   ],
   templateUrl: './skill-list.component.html',
   styleUrl: './skill-list.component.css'
 })
 export class SkillListComponent implements OnInit{
-  @Input() softSkillsList! : Skill[]
+  @Input() softSkillsList : SoftSkill[] = []
   @Input() languageSkills : HardSkills[] =[]
   @Input() frameworkList : HardSkills[] = []
+
+  //Jauge de test
   levelChoices! : {option : string, purcent : number}[]
   index : number = 3
 
-  constructor(public datasService : DatasService,private hardSkillService : HardSkillsService ) {}
+  //constructeur
+  constructor(public datasService : DatasService, private skillService : SkillsService ) {}
 
   ngOnInit(): void {
     this.levelChoices = this.datasService.choice
-    this.hardSkillService.getHardSkills().subscribe((hardskills: any) => {
-        // this.hardskillsList = hardskills; // Utilisez les données reçues
-      for (let hardskill of hardskills){
-
-        if(hardskill.framwork){
-          this.frameworkList.push(hardskill)
-        }else{
-          this.languageSkills.push(hardskill)
+    this.skillService.getSkills().subscribe((skills: any) => {
+      console.log(skills)
+      for (let skill of skills){
+        if(skill.skillType === 'framework'){
+          this.frameworkList.push(skill)
+        }else if(skill.skillType === 'language'){
+          this.languageSkills.push(skill)
+        }else if(skill.skillType === 'softskill'){
+          this.softSkillsList.push(skill)
         }
       }
-      console.log(hardskills)
     });
-    //
-    this.softSkillsList = this.datasService.getSoftSkillsList()
   }
 
   nextChoiceLevel() {

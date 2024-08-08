@@ -6,7 +6,11 @@ export class Card {
   constructor(public title: string,
               public description: string,
               public urlCardPicture: string,
-              public programingLanguages?: Language[],
-              public hrefUrl? : string){}
+              public languages?: Language[],
+              public hrefUrl? : string,
+              public project? : boolean
+  ){}
+
+
 
 }

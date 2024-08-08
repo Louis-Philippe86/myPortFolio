@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NgFor} from "@angular/common";
+import {NgFor, NgIf} from "@angular/common";
 import {Card} from "../models/card";
 import {RouterLink} from "@angular/router";
 
@@ -7,14 +7,12 @@ import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, RouterLink, NgIf],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
-export class CardComponent implements OnInit{
+export class CardComponent{
   @Input() card! : Card
 
-  ngOnInit() {
 
-  }
 }

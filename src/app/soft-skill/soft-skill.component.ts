@@ -1,10 +1,10 @@
 import {Component, Input} from '@angular/core';
 import {ModalComponent} from "../modals/modal.component";
 import {SharedModule} from "../shared/shared.module";
-import {Skill} from "../models/skill";
 import {ModalService} from "../services/modal-service";
 import {RouterOutlet} from "@angular/router";
 import {CommonModule} from "@angular/common";
+import {SoftSkill} from "../models/SoftSkill";
 
 @Component({
   selector: 'app-soft-skill',
@@ -19,7 +19,7 @@ import {CommonModule} from "@angular/common";
   styleUrl: './soft-skill.component.css'
 })
 export class SoftSkillComponent {
-  @Input() skill! : Skill
+  @Input() skill! : SoftSkill
   constructor(private modalService : ModalService) {
   }
   openModal() {

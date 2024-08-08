@@ -15,11 +15,11 @@
   position: absolute;
   left: 40%;
   top: 20%;
-  backdrop-filter: blur(30px); /* Appliquer un flou de 10 pixels */
-  -webkit-backdrop-filter: blur(30px); /* Préfixe pour les navigateurs basés sur WebKit */
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   padding: 20px;
   border-radius: 10px;
-  color: white;
+  color: var(--color_2);
 }
 
 .textPitch > h3{

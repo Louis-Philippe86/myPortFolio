@@ -1,6 +1,15 @@
-<h1>Atouts et compétences</h1>
+
+<h1><span>Atouts et compétences</span></h1>
 <div class="dividerTitle"></div>
 
+<p>
+  Dans une première partie de cette section, sont listées les différentes technologies que j'ai pu utiliser dans le cadre des différents projets que j'ai mené.
+  Côté front, le <span>html</span> et le <span>css</span> sont des languages informatique avec lesquelles je suis à l'aise. Utiliser le <span>JavaScript</span> et le <span>TypeScript</span> ,ne me pose aucune difficultés
+  Côté back, j'ai fait beaucoup de <span>Java</span> dans la mesure ou c'est avec ce language que j'ai appris le développement. Le <span>php</span> est également un language avec lequel je suis à l'aise, car il s'agit du deuxième language prodominant sur lequel j'ai été formé et que j'ai utilisé pendant mon stage de fin de formation.
+  Je maîtrise Les conceptes fondamentaux de Programmation Orienté Objet (<span>POO</span>) et le modèle architectural Modèle Vue Contrôleur (<span>MVC</span>).
+  La <span>modularité</span>,la <span>factorisation</span>, les <span>bonnes pratiques</span> et la <span>simplicité</span>, sont les notions qui me guident dans chacunes de mes réalisations.
+
+</p>
 <!--section hardSkills-->
 <section class="container hardSkillsSection w-50" >
   <div class="mainTitle">
@@ -8,12 +17,12 @@
     <i class="fa-solid fa-code fa-2x me-3 "></i>
   </div>
   <div class="container">
-    <app-hard-skill
-      [hardskillsList] = "languageSkills"
+    <app-skill
+      [skillsList] = "languageSkills"
       [section]="{title : 'Language', logo : 'fa-solid fa-globe fa-2x'}"
       />
-    <app-hard-skill
-      [hardskillsList] = "frameworkList"
+    <app-skill
+      [skillsList] = "frameworkList"
       [section]="{title : 'Framworks', logo : 'fa-solid fa-book-atlas fa-2x'}"
     />
   </div>
@@ -51,7 +60,7 @@
   <!--DividerSection-->
   <div class="dividerSection">
       <span class="iconify" data-icon="gis:union" data-inline="false"
-            style="color: white; width: 3.5rem; height: 3.5rem;">
+            style="color: var(--color_2); width: 3.5rem; height: 3.5rem;">
       </span>
   </div>
 </section>

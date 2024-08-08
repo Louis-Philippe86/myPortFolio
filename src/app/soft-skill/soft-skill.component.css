@@ -47,14 +47,14 @@
 
 /* Style the front side */
 .flip-card-front {
-  background: linear-gradient(to right,var(--color_1),var(--color_2));
+  background: var(--color_3);
   color: black;
 
 }
 
 /* Style the back side */
 .flip-card-back {
-  background: linear-gradient(to right,var(--color_2),var(--color_1));
+  background: var(--color_3);
   color: black  ;
 
   transform: rotateY(180deg);

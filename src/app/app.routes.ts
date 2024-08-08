@@ -4,7 +4,6 @@ import {SkillListComponent} from "./skill-list/skill-list.component";
 import {TestComponent} from "./test/test.component";
 import {CareerComponent} from "./career/career.component";
 import {ProjectComponent} from "./project/project.component";
-import {CardListComponent} from "./card-list/card-list.component";
 
 export const routes: Routes = [
   {path: '', component : HomeComponent},

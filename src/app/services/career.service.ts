@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Skill} from "../models/skill";
 import {Career} from "../models/Career";
-import {Card} from "../models/card";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Language} from "../models/Language";
+
 
 @Injectable({
   providedIn: 'root'
