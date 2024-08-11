@@ -1,16 +1,15 @@
-<div class="flip-card" (click)="openModal()">
+<div class="flip-card">
   <div  class="flip-card-inner">
-    <div class="flip-card-front p-3 d-flex flex-column">
+    <div class="flip-card-front p-1 pt-2 d-flex flex-column">
       <p class="fw-bold mb-1">{{skill.title}}</p>
       <cite class="mt-0">"{{skill.citation}}"</cite>
     </div>
-    <div class="flip-card-back">
-      <p class="p-3">{{skill.description  | truncateText : 50}}</p>
+    <div class="flip-card-back d-flex justify-content-center align-items-center">
+      <p class="p-1">{{skill.description  | truncateText : 80}}</p>
     </div>
   </div>
 </div>
-<app-modal
-  [content]="skill.description"
-  [title]="skill.title"/>
+
+
 
 

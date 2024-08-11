@@ -2,15 +2,15 @@ import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular
 import { NgForOf } from "@angular/common";
 
 @Component({
-  selector: 'app-skill',
+  selector: 'app-hard-skill',
   standalone: true,
   imports: [
     NgForOf
   ],
-  templateUrl: './skill.component.html',
-  styleUrls: ['./skill.component.css']
+  templateUrl: './hard-skill.component.html',
+  styleUrls: ['./hard-skill.component.css']
 })
-export class SkillComponent implements AfterViewInit{
+export class HardSkillComponent implements AfterViewInit{
 
   @Input() skillsList!: any;
   @Input() frameworks!: any;

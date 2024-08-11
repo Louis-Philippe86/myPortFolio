@@ -1,8 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {UserService} from "./user.service";
-import {User} from "./user/user";
 import {SharedModule} from "../shared/shared.module";
 
 
@@ -15,21 +13,14 @@ import {SharedModule} from "../shared/shared.module";
     SharedModule
   ],
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
+  styleUrls: ['./test.component.css'],
+
 })
-export class TestComponent implements OnInit{
+export class TestComponent {
+  showSidebar: boolean = false;
 
-  users : any;
-
-  constructor(private userService: UserService) { }
-
-  ngOnInit(): void {
-    this.userService.getUsers().subscribe(data =>{
-      this.users = data
-    console.log(data)
-    });
-
+  toggleSidebar() {
+    this.showSidebar = !this.showSidebar;
   }
-
 
 }

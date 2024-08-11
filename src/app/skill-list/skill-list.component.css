@@ -48,17 +48,21 @@ backdrop-filter: blur(30px);
   box-shadow:
     -2px 0 5px rgba(0, 0, 0, 0.1),
     2px 0 5px rgba(0, 0, 0, 0.1);
+  border-right: 2px solid var(--color_3);
+  border-left: 2px solid var(--color_3);
 }
 
 .softSkillsSection {
   background: var(--color_1);
   border-radius: 0 0 20px 20px ;
+  border-bottom: 2px solid var(--color_3);
 
 }
 .hardSkillsSection{
   position: relative;
   background:  var(--color_4);
   border-radius: 20px 20px 0 0;
+  border-top: 2px solid var(--color_3);
 }
 .skillsName{
   position: relative;

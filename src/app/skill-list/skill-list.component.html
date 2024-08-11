@@ -1,15 +1,25 @@
-
 <h1><span>Atouts et compétences</span></h1>
+
+<div class="pitchSection">
+  <p>Dans cette section, je vous présente les différentes technologies que j'ai eu l'occasion d'utiliser au cours des divers projets que j'ai menés.</p>
+  <ul>
+    <li><span>Côté front :</span></li>
+    <ul>
+      <li>Je suis à l'aise avec les langages <span>HTML</span> et <span>CSS</span>, qui sont à la base de tout développement web.</li>
+      <li>La maîtrise du <span>JavaScript</span> et de son cousin typé, <span>TypeScript</span>, fait également partie de mes compétences.</li>
+    </ul>
+    <li><span>Côté back :</span></li>
+    <ul>
+      <li>Le <span>Java</span> a été mon premier amour en développement, c'est le langage avec lequel j'ai fait mes débuts.</li>
+      <li>J'ai également une grande aisance avec le <span>PHP</span>, le deuxième langage majeur sur lequel j'ai été formé.</li>
+    </ul>
+    <li>Je maîtrise les concepts fondamentaux de la Programmation Orientée Objet (<span>POO</span>) ainsi que le modèle architectural Modèle-Vue-Contrôleur (<span>MVC</span>).</li>
+    <li>Les notions de <span>modularité</span>, de <span>factorisation</span>, des <span>bonnes pratiques</span> et de <span>simplicité</span> sont les principes qui guident chacune de mes réalisations.</li>
+  </ul>
+
+</div>
 <div class="dividerTitle"></div>
-
-<p>
-  Dans une première partie de cette section, sont listées les différentes technologies que j'ai pu utiliser dans le cadre des différents projets que j'ai mené.
-  Côté front, le <span>html</span> et le <span>css</span> sont des languages informatique avec lesquelles je suis à l'aise. Utiliser le <span>JavaScript</span> et le <span>TypeScript</span> ,ne me pose aucune difficultés
-  Côté back, j'ai fait beaucoup de <span>Java</span> dans la mesure ou c'est avec ce language que j'ai appris le développement. Le <span>php</span> est également un language avec lequel je suis à l'aise, car il s'agit du deuxième language prodominant sur lequel j'ai été formé et que j'ai utilisé pendant mon stage de fin de formation.
-  Je maîtrise Les conceptes fondamentaux de Programmation Orienté Objet (<span>POO</span>) et le modèle architectural Modèle Vue Contrôleur (<span>MVC</span>).
-  La <span>modularité</span>,la <span>factorisation</span>, les <span>bonnes pratiques</span> et la <span>simplicité</span>, sont les notions qui me guident dans chacunes de mes réalisations.
-
-</p>
+<div class="dividerTitle w-25"></div>
 <!--section hardSkills-->
 <section class="container hardSkillsSection w-50" >
   <div class="mainTitle">
@@ -17,13 +27,17 @@
     <i class="fa-solid fa-code fa-2x me-3 "></i>
   </div>
   <div class="container">
-    <app-skill
+    <app-hard-skill
       [skillsList] = "languageSkills"
-      [section]="{title : 'Language', logo : 'fa-solid fa-globe fa-2x'}"
+      [section]="{title : 'Languages', logo : 'fa-solid fa-globe fa-2x'}"
       />
-    <app-skill
+    <app-hard-skill
       [skillsList] = "frameworkList"
-      [section]="{title : 'Framworks', logo : 'fa-solid fa-book-atlas fa-2x'}"
+      [section]="{title : 'Frameworks', logo : 'fa-solid fa-book-atlas fa-2x'}"
+    />
+    <app-hard-skill
+      [skillsList] = "otherList"
+      [section]="{title : 'Others', logo : 'fa-solid fa-cubes fa-2x'}"
     />
   </div>
   <!--section testLevel-->
@@ -72,9 +86,13 @@
   </div>
   <div class="d-flex flex-row justify-content-center flex-wrap">
     @for (skill of softSkillsList; track skill.title){
-      <app-soft-skill class="m-3" [skill]="skill"/>
+      <app-soft-skill (click)="openModal(skill.title,skill.description)" class="m-3" [skill]="skill"/>
     }
   </div>
 </section>
+<app-modal
+  [title]="modalTitle"
+  [content]="modalContent"/>
+
 
 

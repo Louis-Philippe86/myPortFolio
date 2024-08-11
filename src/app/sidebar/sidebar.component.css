@@ -1,0 +1,43 @@
+.sidebar {
+  position: absolute;
+  margin-right: 0;
+  padding: 20px 20px 20px 20px;
+  top: -5px;
+  right: -5px;
+  width: 30vw;
+  height: auto;
+  font-size: 0.5rem;
+  background-color: var(--color_3);
+  color: var(--color_5);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  border-right: 3px solid var(--color_3);
+  border-radius: 0 10px 10px 10px;
+  .iconify {
+    margin-right: 10px;
+    width: 2rem;
+    height: 2rem;
+    color: var(--color_5);
+  }
+
+}
+
+.data {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  a{
+    color: var(--color_5);
+    cursor: pointer;
+  }
+  a:hover{
+    color: var(--color_2);
+  }
+}
+
+.iconify {
+  margin-right: 10px;
+  width: 4rem;
+  height: 4rem;
+  color: white;
+}

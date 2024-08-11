@@ -5,10 +5,11 @@ import {SoftSkillComponent} from "../soft-skill/soft-skill.component";
 import {RouterOutlet} from "@angular/router";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {DatasService} from "../services/datas.service";
-import {SkillComponent} from "../skill/skill.component";
+import {HardSkillComponent} from "../hard-skill/hard-skill.component";
 import {HardSkills} from "../models/HardSkills";
 import {SoftSkill} from "../models/SoftSkill";
 import {SkillsService} from "../services/skills.service";
+import {ModalService} from "../services/modal-service";
 
 
 @Component({
@@ -21,7 +22,7 @@ import {SkillsService} from "../services/skills.service";
     SoftSkillComponent,
     NgOptimizedImage,
     NgForOf,
-    SkillComponent
+    HardSkillComponent
   ],
   templateUrl: './skill-list.component.html',
   styleUrl: './skill-list.component.css'
@@ -30,18 +31,21 @@ export class SkillListComponent implements OnInit{
   @Input() softSkillsList : SoftSkill[] = []
   @Input() languageSkills : HardSkills[] =[]
   @Input() frameworkList : HardSkills[] = []
+  @Input() otherList : HardSkills[] = []
+  modalTitle! : string
+  modalContent! : string
 
   //Jauge de test
   levelChoices! : {option : string, purcent : number}[]
   index : number = 3
 
   //constructeur
-  constructor(public datasService : DatasService, private skillService : SkillsService ) {}
+  constructor(public datasService : DatasService, private skillService : SkillsService, private modalService : ModalService ) {}
 
   ngOnInit(): void {
     this.levelChoices = this.datasService.choice
     this.skillService.getSkills().subscribe((skills: any) => {
-      console.log(skills)
+
       for (let skill of skills){
         if(skill.skillType === 'framework'){
           this.frameworkList.push(skill)
@@ -49,9 +53,20 @@ export class SkillListComponent implements OnInit{
           this.languageSkills.push(skill)
         }else if(skill.skillType === 'softskill'){
           this.softSkillsList.push(skill)
+        }else if(skill.skillType === 'other'){
+          this.otherList.push(skill)
         }
       }
     });
+  }
+
+  openModal(title : string, description : string) {
+    this.modalTitle = title
+    this.modalContent = description
+    this.modalService.open();
+  }
+  closeModal(){
+    this.modalService.close()
   }
 
   nextChoiceLevel() {

@@ -1,4 +1,33 @@
-@for ( user of users; track user.id){
-  <p>{{user.name}}{{user.email}}</p>
-}
-<p>test</p>
+<div class="toggle-container">
+  <button (click)="toggleSidebar()" class="toggle-button">Données personnelles</button>
+  <div *ngIf="showSidebar" class="sidebar">
+    <div class="data">
+      <span class="iconify" data-icon="tdesign:map-location" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+      <span>Francueil</span>
+    </div>
+    <div class="data">
+      <span class="iconify" data-icon="gridicons:phone" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+      <span>06-73-07-30-69</span>
+    </div>
+    <div class="data">
+      <span class="iconify" data-icon="icon-park-outline:birthday-cake" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+      <span>Date de naissance</span>
+    </div>
+    <div class="data">
+      <span class="iconify" data-icon="fa:drivers-license-o" data-inline="false"></span>
+      <span>Permis B</span>
+    </div>
+    <div class="data">
+      <span class="iconify" data-icon="octicon:mail-16" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+      <span>louis.philippe.coronas&#64;gmail.com</span>
+    </div>
+    <div class="data">
+      <span class="iconify" data-icon="mdi:linkedin" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+      <span>Louis-Philippe CORONAS</span>
+    </div>
+    <div class="data">
+      <span class="iconify" data-icon="mdi:github" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+      <span>Louis-Philippe86</span>
+    </div>
+  </div>
+</div>

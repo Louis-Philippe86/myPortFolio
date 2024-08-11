@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import {SoftSkill} from "../models/SoftSkill";
+import {Injectable, OnInit} from '@angular/core';
+import {PersonalData} from "../models/PersonalData";
 
 
 @Injectable({
@@ -17,23 +17,20 @@ export class DatasService {
     {option : "Expert" , purcent : 110},
   ]
 
-
-
-  private softSkillsList =[
-    new SoftSkill('Pédagogue', "La pédagogie, c'est l'art de la répétition", 'j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc'),
-    new SoftSkill('Autonome', "L'autonomie c'est être seul", 'j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc'),
-    new SoftSkill('Autonome', "L'autonomie c'est être seul", 'j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc'),
-    new SoftSkill('Autonome', "L'autonomie c'est être seul", 'j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc'),
-    new SoftSkill('Autonome', "L'autonomie c'est être seul", 'j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc'),
-    new SoftSkill('Autonome', "L'autonomie c'est être seul", 'j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc'),
-    new SoftSkill('Pédagogue', "La pédagogie, c'est l'art de la répétition", 'j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc j\'ai fait plein de truc'),
-
+  PersonalData : PersonalData[] = [
+    new PersonalData("Francueil","tdesign:map-location"),
+    new PersonalData("06-73-07-30-69","gridicons:phone"),
+    new PersonalData("Date de naissance","icon-park-outline:birthday-cake"),
+    new PersonalData("Permis B","tdesign:map-location"),
+    new PersonalData("louis.philippe.coronas@gmail.com","octicon:mail-16","mailto:louis.philippe.coronas@gmail.com"),
+    new PersonalData("Louis-Philippe CORONAS","mdi:linkedin","https://www.linkedin.com/in/louis-philippe-coronas-a90a6620b"),
+    new PersonalData("Louis-Philippe86","mdi:github","https://github.com/Louis-Philippe86/PorteFolio"),
   ]
 
 
-
-  getSoftSkillsList(): SoftSkill[] {
-    return this.softSkillsList;
+  getPersonalDatas() : PersonalData[] {
+    return this.PersonalData;
   }
+
 
 }

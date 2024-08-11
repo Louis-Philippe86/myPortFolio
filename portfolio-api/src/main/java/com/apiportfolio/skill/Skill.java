@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 @Entity
@@ -18,6 +19,7 @@ public class Skill {
     private Long id;
     private String title;
     private String skillType;
+    @Lob
     private String description;
     private int level;
     private String citation;

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
   --color_1:#F8EDE3;
-  --color_2: #000000;
+  --color_2: #252424;
   --color_3:#BC9F8B;
   --color_4:#DFD3C3;
   --color_5:#3a5451;
@@ -9,16 +9,16 @@
 
 }
 
-
 .dividerTitle {
   height: 2px;
   width: 50vw;
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
   background: linear-gradient(to left, var(--color_2), var(--color_5));
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 body {
   font-family : 'Montserrat', sans-serif !important;
+  text-align: justify;
   background-image: url("./assets/test.jpg");
   background-size: cover;
   background-position: center;
@@ -27,15 +27,51 @@ body {
 
 }
 
+
 header, footer{
   background-color: var(--color_6);
   color: white;
 }
-
 footer{
-  padding: 20px;
+  padding-top: 5px;
+  overflow: hidden;
 }
 
+.pitchSection {
+  background-color: var(--color_1);
+  border: 2px solid var(--color_3);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 50vw;
+  margin: auto auto 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--color_5);
+  span{
+    font-weight: 750;
+  }
+  a{
+    /*text-decoration: inherit;*/
+    font-family : 'Montserrat', sans-serif !important;
+    color: var(--color_5);
+
+  }
+
+  p{
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  ul{
+    list-style-type: square;
+    padding-left: 50px;
+    li{
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    li::marker{
+      color: var(--color_3);
+    }
+  }
+}
 
 
 

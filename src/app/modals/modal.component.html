@@ -1,7 +1,7 @@
-<div class="modal" *ngIf="isVisible">
+<div class="modal" *ngIf="isVisible"  (click)="closeModal()">
   <div class="modal-content">
-    <span class="close" (click)="closeModal()">&times;</span>
-    <p>{{content}}</p>
+    <span class="close" >&times;</span>
+    <p [innerHTML]="content"></p>
     <div class="divider"></div>
     <span class="fst-italic">{{title}}</span>
   </div>

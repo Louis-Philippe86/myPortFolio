@@ -1,0 +1,57 @@
+.scrollInit{
+  display: flex;
+  justify-content: end;
+  margin-right: 40px;
+  position: sticky;
+  bottom: 20px;
+  i{
+    z-index: 99999;
+    border-radius: 100%;
+    color: white;
+    background-color: var(--color_6);
+  }
+  span{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.scrollInit:hover{
+  cursor: pointer;
+}
+
+.toggle-button {
+  float: right;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  flex-direction: column;
+  margin-right: 40px;
+  position: sticky;
+  margin-top: 30px;
+  margin-left: -2000px;
+  top: 30px;
+  .iconify {
+    width: 4rem;
+    height: 4rem;
+    color: var(--color_4);
+    background-color: var(--color_3);
+    border-radius: 100%;
+    z-index: 2;
+    position: relative;
+  }
+  .iconify:hover{
+    color: var(--color_3);
+    background-color: var(--color_4);
+    cursor: pointer;
+
+  }
+}
+
+
+.indexZ0{
+  z-index: 0;
+}
+.indexZ1{
+  z-index: 1;
+}

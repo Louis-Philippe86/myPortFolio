@@ -1,0 +1,13 @@
+<div class="sidebar">
+  @for(personalData of personalDatas; track personalData.name){
+    <div class="data">
+      <span class="iconify" [attr.data-icon]="personalData.icon" data-inline="false" style="width: 2rem; height: 2rem;"></span>
+      @if(personalData.href){
+        <a [href]="personalData.href" target="_blank"><span>{{ personalData.name }}</span></a>
+      }@else{
+        <span>{{ personalData.name }}</span>
+      }
+    </div>
+  }
+</div>
+

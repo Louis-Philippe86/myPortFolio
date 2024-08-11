@@ -22,9 +22,4 @@ export class SoftSkillComponent {
   @Input() skill! : SoftSkill
   constructor(private modalService : ModalService) {
   }
-  openModal() {
-    this.modalService.open();
-  }
-
-
 }
