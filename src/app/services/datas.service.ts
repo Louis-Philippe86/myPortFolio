@@ -20,7 +20,7 @@ export class DatasService {
   PersonalData : PersonalData[] = [
     new PersonalData("Francueil","tdesign:map-location"),
     new PersonalData("06-73-07-30-69","gridicons:phone"),
-    new PersonalData("Date de naissance","icon-park-outline:birthday-cake"),
+    new PersonalData("24 Juin 1986","icon-park-outline:birthday-cake"),
     new PersonalData("Permis B","tdesign:map-location"),
     new PersonalData("louis.philippe.coronas@gmail.com","octicon:mail-16","mailto:louis.philippe.coronas@gmail.com"),
     new PersonalData("Louis-Philippe CORONAS","mdi:linkedin","https://www.linkedin.com/in/louis-philippe-coronas-a90a6620b"),

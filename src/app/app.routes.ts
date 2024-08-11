@@ -5,6 +5,7 @@ import {TestComponent} from "./test/test.component";
 import {CareerComponent} from "./career/career.component";
 import {ProjectComponent} from "./project/project.component";
 import {IntroductionComponent} from "./introduction/introduction.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 export const routes: Routes = [
   {path: '', component : HomeComponent},
@@ -13,4 +14,5 @@ export const routes: Routes = [
   {path: 'projects', component : ProjectComponent},
   {path: 'test', component : TestComponent},
   {path: 'introduction', component : IntroductionComponent},
+  { path: '**', component: PageNotFoundComponent },
 ];
