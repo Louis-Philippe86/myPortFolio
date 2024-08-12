@@ -3,6 +3,7 @@ package com.apiportfolio.cards;
 import java.util.List;
 
 import com.apiportfolio.language.Language;
+import com.apiportfolio.project.Project;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 
@@ -22,11 +24,13 @@ public class Card {
     private Long id;
 
     private String title;
-    private String description;  // Corriger l'orthographe
+    private String description;  
 
     private String urlCardPicture;
     private String hrefUrl;
-    private boolean project;
+    
+    @OneToOne(mappedBy="card")
+    private Project project;
 
     @ManyToMany
     @JoinTable(
@@ -39,7 +43,7 @@ public class Card {
     public Card() {
     }
 
-    public Card(String title, String description, String urlCardPicture, String hrefUrl, boolean project) {
+    public Card(String title, String description, String urlCardPicture, String hrefUrl, Project project) {
         this.title = title;
         this.description = description;
         this.urlCardPicture = urlCardPicture;
@@ -88,11 +92,11 @@ public class Card {
         this.hrefUrl = hrefUrl;
     }
 
-    public boolean isProject() {
+    public Project isProject() {
         return project;
     }
 
-    public void setProject(boolean project) {
+    public void setProject(Project project) {
         this.project = project;
     }
 

@@ -11,8 +11,12 @@ import {RouterLink} from "@angular/router";
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
-export class CardComponent{
+export class CardComponent implements OnInit{
   @Input() card! : Card
+
+  ngOnInit(): void {
+    console.log(this.card)
+  }
 
 
 }

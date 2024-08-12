@@ -1,50 +1,8 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
+h1{
+  text-align: center;
+  margin: 30px 0 30px 0;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--color_4);
 }
 
-.toggle-container {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-}
-
-.toggle-button {
-  padding: 10px 20px;
-  background-color: var(--color_3);
-  color: var(--color_2);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.toggle-button:hover {
-  background-color: var(--color_5);
-}
-
-.sidebar {
-  position: fixed;
-  top: 50px;
-  left: 10px;
-  width: 40vw;
-  height: auto;
-  background-color: var(--color_3);
-  color: var(--color_5);
-  padding: 20px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-  border-right: 3px solid var(--color_3);
-  border-radius: 0 10px 10px 10px;
-  z-index: 1000;
-}
-
-.data {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.data .iconify {
-  margin-right: 10px;
-}
