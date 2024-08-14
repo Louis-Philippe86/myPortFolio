@@ -23,9 +23,4 @@ export class SidebarComponent implements OnInit{
     this.personalDatas = this.dataService.getPersonalDatas()
   }
 
-  toggleSidebar() {
-    this.showSidebar = !this.showSidebar;
-  }
-
-
 }

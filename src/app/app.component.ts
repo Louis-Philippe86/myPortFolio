@@ -45,7 +45,19 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        this.scrollUp()
+        const currentUrl = this.router.url;
+        const anchorLinks = document.querySelectorAll('.anchor-link');
+
+        let isAnchorNavigation = false;
+        anchorLinks.forEach((link: Element) => {
+          if ((link as HTMLAnchorElement).href.endsWith(currentUrl)) {
+            isAnchorNavigation = true;
+          }
+        });
+
+        if (!isAnchorNavigation) {
+          this.scrollUp();
+        }
       }
     });
   }

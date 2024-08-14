@@ -6,6 +6,7 @@ import {ProjectService} from "../services/project.service";
 import {Project} from "../models/Project";
 
 
+
 @Component({
   selector: 'app-test',
   standalone: true,
@@ -20,6 +21,7 @@ import {Project} from "../models/Project";
 })
 export class TestComponent implements OnInit{
 
+  showSummary! : boolean
   project! : Project
 
   constructor(
@@ -27,10 +29,12 @@ export class TestComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.projectService.getProjectById(1).subscribe((project: any) => {
+    this.projectService.getProjectById(2).subscribe((project: any) => {
       this.project = project;
     });
   }
 
-
+  toggleSummary() {
+    this.showSummary = !this.showSummary
+  }
 }

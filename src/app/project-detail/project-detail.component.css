@@ -1,0 +1,56 @@
+h1{
+  text-align: center;
+  margin: 30px 0 30px 0;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--color_4);
+}
+.nav-section{
+  position: fixed;
+  top: 240px;
+  left : 20px;
+  width: 15vw;
+  a{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+}
+.infoProject{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: var(--color_4);
+  padding: 20px;
+}
+.languageProject{
+  display: flex;
+  flex-direction: row;
+  span{
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.file {
+  display: inline-block;
+  background-color: var(--color_6);
+  color: var(--color_4);
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 20px;
+  margin: auto;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.file:hover {
+  background-color: var(--color_2);
+  color: var(--color_6);
+}

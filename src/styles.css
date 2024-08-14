@@ -50,10 +50,8 @@ footer{
     font-weight: 750;
   }
   a{
-    /*text-decoration: inherit;*/
     font-family : 'Montserrat', sans-serif !important;
     color: var(--color_5);
-
   }
 
   p{
