@@ -15,7 +15,7 @@ h1{
   float: left;
   margin-right: -500px;
   top: 145px;
-  left : 0px;
+  left : 0;
   width: 160px;
   padding: 10px;
 
@@ -61,6 +61,10 @@ h1{
 .languageProject{
   display: flex;
   flex-direction: row;
+  .iconify{
+    width: 2rem;
+    height: 2rem;
+  }
   span{
     display: inline-block;
     margin-right: 20px;
@@ -116,5 +120,23 @@ h1{
     height: 1.7rem;
   }
   }
+}
+@media (max-width: 768px){
+
+  .infoProject {
+    flex-direction: column;
+    align-items: center;
+
+    .languageProject {
+      margin-bottom: 10px;
+    }
+
+    .iconify {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+  }
+
+  /*}*/
 }
 

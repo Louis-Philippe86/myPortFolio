@@ -1,6 +1,4 @@
-package com.apiportfolio.skill;
-
-import com.apiportfolio.language.Language;
+package com.apiportfolio.bo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

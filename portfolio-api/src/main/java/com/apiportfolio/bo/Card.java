@@ -1,9 +1,6 @@
-package com.apiportfolio.cards;
+package com.apiportfolio.bo;
 
 import java.util.List;
-
-import com.apiportfolio.language.Language;
-import com.apiportfolio.project.Project;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

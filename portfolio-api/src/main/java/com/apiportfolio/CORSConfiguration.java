@@ -15,7 +15,7 @@ public class CORSConfiguration {
             public void addCorsMappings(CorsRegistry registry) {
                 System.out.println("CORS Configuration Loaded");
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:4200") // Remplacez par l'URL de votre application Angular
+                        .allowedOrigins("http://localhost:4200")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);

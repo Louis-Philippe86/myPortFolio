@@ -1,8 +1,11 @@
-package com.apiportfolio.project;
+package com.apiportfolio.bll;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.apiportfolio.bo.Project;
+import com.apiportfolio.dal.ProjectRepository;
 
 import java.util.List;
 import java.util.Optional;

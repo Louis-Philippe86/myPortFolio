@@ -1,6 +1,4 @@
-package com.apiportfolio.project;
-
-import com.apiportfolio.cards.Card;
+package com.apiportfolio.bo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

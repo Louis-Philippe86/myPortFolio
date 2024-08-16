@@ -16,28 +16,31 @@
 </div>
 <div class="dividerTitle"></div>
 <div class="dividerTitle w-25"></div>
-<div *ngFor="let work of works; let i = index " [ngClass]="{'pair' : i % 2 !== 0}" class="container workXp">
-  <div class="card" >
-    <div class="card-title">
-      <h4>{{work.title}}</h4>
-      <span class="date">{{work.date}}</span>
-    </div>
-    <div class="card-body">
-      <div class="card-image">
-        <img [src]="work.imageUrl" [alt]="i" >
-      </div >
-      <div >
-        <ul class="task" *ngFor="let task of work.tasks">
-          <li><span class="custom-bullet"></span>{{task}}</li>
-        </ul>
+<div class="work-experience-section">
+  <div *ngFor="let work of works; let i = index " [ngClass]="{'pair' : i % 2 !== 0}" class="work-experience">
+    <div class="card-work" >
+      <div class="card-work-title">
+        <h4>{{work.title}}</h4>
+        <span class="date">{{work.date}}</span>
+      </div>
+      <div class="card-work-body">
+        <div class="card-work-image">
+          <img [src]="work.imageUrl" [alt]="i" >
+        </div >
+        <div >
+          <ul class="task" *ngFor="let task of work.tasks">
+            <li><span class="custom-bullet"></span>{{task}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-work-footer">
+        <span><strong>{{work.company.name}}</strong></span>
+        <span>- {{work.company.city}} -</span>
       </div>
     </div>
-    <div class="card-footer">
-      <span>{{work.company.name}}</span>
-      <span>à {{work.company.city}}</span>
-    </div>
-  </div>
 </div>
+</div>
+
 
 
 

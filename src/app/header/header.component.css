@@ -39,6 +39,10 @@
 }
 .small-screen-menu{
   display: none;
+  .iconify{
+    display: inline-block;
+    margin-right: 10px;
+  }
 }
 .small-screen-menu:hover{
   cursor: pointer;

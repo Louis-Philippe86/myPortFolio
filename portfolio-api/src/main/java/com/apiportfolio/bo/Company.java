@@ -1,4 +1,4 @@
-package com.apiportfolio.career;
+package com.apiportfolio.bo;
 
 import jakarta.persistence.Embeddable;
 
