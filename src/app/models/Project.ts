@@ -6,7 +6,7 @@ export class Project{
     public title : string,
     public date : string,
     public description : string,
-    public objective : string,
+    public videoUrl : string,
     public features : string,
     public progress : string,
     public result : string,

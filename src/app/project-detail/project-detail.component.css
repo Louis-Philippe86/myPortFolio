@@ -5,17 +5,52 @@ h1{
   font-weight: 600;
   color: var(--color_4);
 }
-.nav-section{
-  position: fixed;
-  top: 240px;
-  left : 20px;
-  width: 15vw;
+
+
+.header-summary:hover{
+  cursor: pointer;
+}
+.summary{
+  position: sticky;
+  float: left;
+  margin-right: -500px;
+  top: 145px;
+  left : 0px;
+  width: 160px;
+  padding: 10px;
+
+}
+
+.header-summary{
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .iconify{
+    width: 2.0rem;
+    height: 2.0rem;
+  }
+  span{
+    display: block;
+  }
+}
+
+.body-summary{
+  padding-top: 15px;
+  div{
+    margin: auto auto 20px;
+  }
+
   a{
     display: block;
     margin-bottom: 20px;
     font-size: 0.9rem;
   }
 }
+
+
 .infoProject{
   display: flex;
   flex-direction: row;
@@ -54,3 +89,32 @@ h1{
   background-color: var(--color_2);
   color: var(--color_6);
 }
+
+.demo-project{
+  video{
+    width: 90%;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow:
+      12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+      100px 100px 80px rgba(0, 0, 0, 0.07)
+  ;
+
+  }
+}
+
+@media (max-width: 1200px){
+  .summary{
+    display: none;
+  }
+
+  .header-summary{
+    font-size: 1rem;
+  .iconify{
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+  }
+}
+

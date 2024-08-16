@@ -1,4 +1,4 @@
-<h1><span>Atouts et compétences</span></h1>
+<h1>Atouts et compétences</h1>
 
 <div class="pitchSection">
   <p>Dans cette section, je vous présente les différentes technologies que j'ai eu l'occasion d'utiliser au cours des divers projets que j'ai menés.</p>
@@ -21,73 +21,62 @@
 <div class="dividerTitle"></div>
 <div class="dividerTitle w-25"></div>
 <!--section hardSkills-->
-<section class="container hardSkillsSection w-50" >
-  <div class="mainTitle">
+<section class="hard-skills-section" >
+  <div class="section-title">
     <h2>Technical Skills</h2>
     <i class="fa-solid fa-code fa-2x me-3 "></i>
   </div>
-  <div class="container">
-    <app-hard-skill
-      [skillsList] = "languageSkills"
-      [section]="{title : 'Languages', logo : 'fa-solid fa-globe fa-2x'}"
-      />
-    <app-hard-skill
-      [skillsList] = "frameworkList"
-      [section]="{title : 'Frameworks', logo : 'fa-solid fa-book-atlas fa-2x'}"
+  <app-hard-skill
+    [skillsList] = "languageSkills"
+    [section]="{title : 'Languages', logo : 'fa-solid fa-globe fa-2x'}"
     />
-    <app-hard-skill
-      [skillsList] = "otherList"
-      [section]="{title : 'Others', logo : 'fa-solid fa-cubes fa-2x'}"
-    />
-  </div>
+  <app-hard-skill
+    [skillsList] = "frameworkList"
+    [section]="{title : 'Frameworks', logo : 'fa-solid fa-book-atlas fa-2x'}"
+  />
+  <app-hard-skill
+    [skillsList] = "otherList"
+    [section]="{title : 'Others', logo : 'fa-solid fa-cubes fa-2x'}"
+  />
   <!--section testLevel-->
-  <div class="testSection">
-    <div class="secondTitle">
+  <div class="test-section">
+    <div class="level-title">
       <i class="fa-solid fa-circle-question fa-2x"></i>
       <h2>Level</h2>
     </div>
   <!--jauge-->
-    <div class="container d-flex flex-column align-items-center">
-          <div class="container w-50">
-              <div class="progress skill-bar">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  [style.width.%]="levelChoices[index].purcent"> <!-- Initial width set to 0 for animation -->
-                </div>
-              </div>
-          </div>
+    <div class="progress skill-bar">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [style.width.%]="levelChoices[index].purcent"> <!-- Initial width set to 0 for animation -->
+      </div>
     </div>
     <!--commande-->
-    <div class="container">
-      <div class="row">
-        <div class="levelTest">
-          <i class="fa-solid fa-angles-right fa-2x fa-rotate-180" (click)="previousChoiceLevel()"></i>
-          <p>{{levelChoices[index].option}}</p>
-          <i class="fa-solid fa-angles-right fa-2x" (click)="nextChoiceLevel()"></i>
-        </div>
-      </div>
+    <div class="level-test">
+      <i class="fa-solid fa-angles-right fa-2x fa-rotate-180" (click)="previousChoiceLevel()"></i>
+      <span>{{levelChoices[index].option}}</span>
+      <i class="fa-solid fa-angles-right fa-2x" (click)="nextChoiceLevel()"></i>
     </div>
   </div>
   <!--DividerSection-->
-  <div class="dividerSection">
-      <span class="iconify" data-icon="gis:union" data-inline="false"
-            style="color: var(--color_2); width: 3.5rem; height: 3.5rem;">
+  <div class="divider-section">
+      <span class="iconify" data-icon="gis:union" data-inline="false">
       </span>
   </div>
 </section>
 <!--Section softSkills-->
-<section class="container softSkillsSection w-50">
-  <div class=" mainTitle">
+<section class="soft-skills-section">
+  <div class="section-title">
     <h2>Soft Skills</h2>
     <i class="fa-solid fa-users-gear fa-2x me-3 me-0"></i>
   </div>
-  <div class="d-flex flex-row justify-content-center flex-wrap">
+  <div class="soft-skills">
     @for (skill of softSkillsList; track skill.title){
-      <app-soft-skill (click)="openModal(skill.title,skill.description)" class="m-3" [skill]="skill"/>
-    }
+      <app-soft-skill (click)="openModal(skill.title,skill.description)" [skill]="skill"/>
+        }
   </div>
 </section>
 <app-modal

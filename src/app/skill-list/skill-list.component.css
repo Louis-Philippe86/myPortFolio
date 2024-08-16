@@ -1,30 +1,80 @@
-h1{
-  text-align: center;
-  margin: 30px 0 30px 0;
-  font-size: 50px;
-  font-weight: 600;
-  color: var(--color_4);
-}
-
-
-.sectionMainTitle{
-
-backdrop-filter: blur(30px);
--webkit-backdrop-filter: blur(30px);
-  width: 50%;
-}
-
-.mainTitle{
+.section-title{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin :  20px 0 10px 10px;
+  padding :  20px 0 10px 10px;
   vertical-align: middle;
   color: var(--color_2);
 }
 
-.secondTitle{
+.hard-skills-section,
+.soft-skills-section{
+  border-right: 2px solid var(--color_3);
+  border-left: 2px solid var(--color_3);
+  margin: auto;
+}
+.hard-skills-section{
+  width: 50vw;
+  position: relative;
+  background:  var(--color_4);
+  border-radius: 20px 20px 0 0;
+  border-top: 2px solid var(--color_3);
+  padding-bottom: 50px;
+}
+.divider-section {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6.5rem;
+  height: 6.5rem;
+  background:  var(--color_4);
+  border-radius: 100%;
+  z-index: 2;
+  .iconify{
+    color: var(--color_2);
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+.soft-skills-section{
+  width: 50vw;
+  background:  var(--color_4);
+  background: var(--color_1);
+  border-radius: 0 0 20px 20px ;
+  border-bottom: 2px solid var(--color_3);
+}
+
+.soft-skills{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+
+
+.test-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color_2);
+  padding-top: 10px;
+  margin: 20px auto;
+  vertical-align: middle;
+  border-top : 2px solid white;
+  width: 40%;
+  h2{
+    text-align: center;
+  }
+}
+
+.level-title{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -39,91 +89,29 @@ backdrop-filter: blur(30px);
     margin-right: 10px ;
   }
 }
-
-.softSkillsSection ,
-.hardSkillsSection{
-  padding-bottom: 50px;
-  padding-top: 10px ;
-  min-height: 50vh;
-  box-shadow:
-    -2px 0 5px rgba(0, 0, 0, 0.1),
-    2px 0 5px rgba(0, 0, 0, 0.1);
-  border-right: 2px solid var(--color_3);
-  border-left: 2px solid var(--color_3);
-}
-
-.softSkillsSection {
-  background: var(--color_1);
-  border-radius: 0 0 20px 20px ;
-  border-bottom: 2px solid var(--color_3);
-
-}
-.hardSkillsSection{
-  position: relative;
-  background:  var(--color_4);
-  border-radius: 20px 20px 0 0;
-  border-top: 2px solid var(--color_3);
-}
-.skillsName{
-  position: relative;
-  color: var(--color_2);
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 5px;
-
-}
-
-.testSection{
-  color: var(--color_2);
-  padding-top: 10px;
-  margin: 20px auto;
-  vertical-align: middle;
-  border-top : 2px solid white;
-  width: 75%;
-  h2{
-    text-align: center;
-  }
-}
-.dividerSection {
-
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 6.5rem;
-  height: 6.5rem;
-  background:  var(--color_4);
-  border-radius: 100%;
-  z-index: 2;
-
-
-}
-.levelTest {
+.level-test {
   position: relative;
   display: flex;
-  align-items: center; /* Center items vertically */
+  flex-direction: row;
+  justify-content: space-around;
   color: var(--color_2);
-  justify-content: space-between;
-  width: 50%;
-  margin: 10px auto auto;
-
+  width: 100%;
+  margin: auto;
   i{
-    flex: 0 0 auto; /* Ensure icons don’t grow or shrink */
+    display: block;
     cursor: pointer;
+    width: 10%;
   }
-  p{
-    margin: 0;
-    text-align: center; /* Center text horizontally */
+  span{
+    display: inline-block;
+    text-align: center;
+    width: 80%;
   }
 }
 .progress-bar {
-  text-align: left;
   border-radius: 20px;
-  transition: width 1s ease-in-out; /* Ensure transition is set */
-  background-color: var(--color_3);
+  transition: width 1s ease-in-out;
+  background-color: var(--color_6);
   margin-left: -5px;
   width: 0;
 }
@@ -135,7 +123,43 @@ backdrop-filter: blur(30px);
 }
 
 
+@media (max-width: 1200px ){
+  .hard-skills-section,
+  .soft-skills-section{
+    width: 75vw;
+  }
+  .level-test{
+    width: 80%;
+  }
+}
 
+@media (max-width: 768px )
+{
+  .hard-skills-section,
+  .soft-skills-section{
+    width: 90vw;
+  }
+}
+@media (max-width: 480px )
+{
+  .level-test{
+    width: 100%;
+  }
+  .test-section{
+    width: 60%;
+  }
+  .hard-skills-section{
+    padding-bottom: 20px;
+  }
+  .divider-section {
+    width: 3.5rem;
+    height: 3.5rem;
+    .iconify{
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
 
 
 

@@ -11,8 +11,6 @@ a{
   overflow: hidden;
   width: 300px;
   transition: transform 0.3s, box-shadow 0.3s;
-
-
 }
 .card-header{
   display: flex;
@@ -35,6 +33,7 @@ a{
   align-items: flex-start;
   padding: 10px;
   min-height: 10rem;
+  border-top: none;
   p{
     font-size: 13px;
     margin: 0 0 20px;
@@ -42,17 +41,13 @@ a{
 }
 
 
-.card-body p {
-
-}
-
 .divider{
   border-top: 2px solid grey;
   width: 80%;
   margin: 0 auto 10px;
 
 }
-.cardFooter {
+.card-project-footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

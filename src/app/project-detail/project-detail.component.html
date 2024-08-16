@@ -1,12 +1,4 @@
 <div *ngIf="project">
-  <nav class="nav-section pitchSection">
-    <h4>Sommaire</h4>
-    <a href="#section1" class="anchor-link">Description du projet</a>
-    <a href="#section2" class="anchor-link">Spécifications</a>
-    <a href="#section3" class="anchor-link">Déroulement du projet</a>
-    <a href="#section4" class="anchor-link">Résultats obtenus</a>
-  </nav>
-
   <h1>{{ project.title }} </h1>
   <div class="infoProject">
     <div class="languageProject">
@@ -20,33 +12,67 @@
     </div>
   </div>
   <div class="dividerTitle"></div>
-  <div id="section1" class="dividerTitle w-25"></div>
-  <div class="pitchSection">
-    <h3>Description du projet</h3>
-    <p [innerHTML]="project.description| parseText"></p>
+  <div class="dividerTitle w-25"></div>
+  <nav class="summary pitchSection">
+    <div class="sommaireToggle">
+      <div class="header-summary" (click)="toggleSummary()">
+        <span>Sommaire</span>
+        <span class="iconify" data-icon="ph:arrow-fat-line-down-fill" data-inline="false"></span>
+      </div>
+
+    </div>
+    @if (showSummary){
+      <div class="body-summary">
+        <div class="dividerTitle w-100"></div>
+        <a href="#section1" class="anchor-link">Description</a>
+        <a href="#section2" class="anchor-link">Objectif</a>
+        <a href="#section3" class="anchor-link">Mise en oeuvre</a>
+        <a href="#section4" class="anchor-link">Résultats</a>
+        @if(project.videoUrl !== null){
+        <a href="#section5" class="anchor-link">Démonstration</a>
+        }
+      </div>
+    }
+  </nav>
+  <div id="section1" class="pitchSection">
+    <h3 >Description du projet</h3>
+    <p [innerHTML]="project.description| parseText">
+    </p>
   </div>
   <div id="section2" class="dividerTitle w-25"></div>
-  <div class="pitchSection">
-    <h3>Spécifications</h3>
+  <div  class="pitchSection">
+    <h3 >Fonctionnalités implémentées</h3>
     <div [innerHTML]="project.features| parseText"></div>
-
   </div>
-  <div id="section3" class="dividerTitle w-25"></div>
+  <div class="dividerTitle w-25"></div>
   <div class="pitchSection">
-    <h3>Déroulement du projet</h3>
+    <h3 id="section3">Déroulement du projet</h3>
     <div [innerHTML]="project.progress| parseText"></div>
   </div>
-  <div id="section4" class="dividerTitle w-25"></div>
+  <div class="dividerTitle w-25"></div>
   <div class="pitchSection">
-    <h3>Résultats obtenus</h3>
+    <h3 id="section4">Résultats obtenus</h3>
     <div [innerHTML]="project.result| parseText"></div>
 
     @if(project.id === 1) {
       <div class="button-container">
-        <a class="file" href="../../assets/documents/Recommandation.pdf" target="_blank">
+        <a class="file" href="assets/documents/Recommandation.pdf" target="_blank">
           <strong>Lettre de recommandation</strong>
         </a>
       </div>
     }
   </div>
+  @if(project.videoUrl !== null){
+    <div class="dividerTitle w-25"></div>
+    <div class="pitchSection">
+      <h3 id="section5">Démonstration vidéo</h3>
+      <p>Voici une courte video des fonctions implémentées, bon visionnage !</p>
+      <div class="demo-project" *ngIf="project.videoUrl">
+        <video controls>
+          <source [src]="project.videoUrl" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  }
 </div>
+

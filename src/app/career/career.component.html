@@ -18,12 +18,12 @@
 <div class="dividerTitle w-25"></div>
 <div *ngFor="let work of works; let i = index " [ngClass]="{'pair' : i % 2 !== 0}" class="container workXp">
   <div class="card" >
-    <div class="cardTitle">
-      <h4 class="jobTitle">{{work.title}}</h4>
+    <div class="card-title">
+      <h4>{{work.title}}</h4>
       <span class="date">{{work.date}}</span>
     </div>
-    <div class="cardBody">
-      <div class="image">
+    <div class="card-body">
+      <div class="card-image">
         <img [src]="work.imageUrl" [alt]="i" >
       </div >
       <div >
@@ -32,7 +32,7 @@
         </ul>
       </div>
     </div>
-    <div class="cardFooter">
+    <div class="card-footer">
       <span>{{work.company.name}}</span>
       <span>à {{work.company.city}}</span>
     </div>

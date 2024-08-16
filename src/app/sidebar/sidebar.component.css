@@ -1,22 +1,23 @@
 .sidebar {
-  position: absolute;
-  margin-right: 0;
-  padding: 20px 20px 20px 20px;
-  top: -5px;
-  right: -5px;
-  width: 30vw;
+  position: fixed;
+  padding: 25px 10px 10px;
+  top: 140px;
+  left: 0;
+  width: 300px;
   height: auto;
   font-size: 0.5rem;
-  background-color: var(--color_3);
-  color: var(--color_5);
+  background-color: var(--color_6);
+  color: var(--color_4);
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   border-right: 3px solid var(--color_3);
-  border-radius: 10px;
+  border-bottom: 3px solid var(--color_3);
+  border-top: 3px solid var(--color_3);
+  border-radius: 0 20px 20px 0;
   .iconify {
     margin-right: 10px;
     width: 2rem;
     height: 2rem;
-    color: var(--color_5);
+    color: var(--color_4);
   }
 
 }
@@ -25,9 +26,9 @@
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   a{
-    color: var(--color_5);
+    color: var(--color_4);
     cursor: pointer;
   }
   a:hover{
@@ -37,7 +38,28 @@
 
 .iconify {
   margin-right: 10px;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   color: white;
+}
+
+
+@media (max-width: 768px ){
+  .sidebar {
+    width: 300px;
+  }
+}
+@media (max-width: 480px ){
+  .sidebar {
+    width: 90vw;
+    top: 80px;
+    left: 0;
+    .iconify{
+      width: 1rem;
+      height: 1rem;
+    }
+    a, span{
+      font-size: 0.9rem;
+    }
+  }
 }

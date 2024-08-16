@@ -13,27 +13,28 @@
     margin-right: 10px ;
   }
 }
-
-.hardSkillsSection{
-  padding-bottom: 50px;
-  padding-top: 10px ;
-  min-height: 50vh;
-  box-shadow:
-    -2px 0 5px rgba(0, 0, 0, 0.1),
-    2px 0 5px rgba(0, 0, 0, 0.1);
+.hard-skill{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.hard-skill-detail{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
 }
 
-.hardSkillsSection{
-  position: relative;
-  background:  var(--color_1);
-  border-radius: 20px 20px 0 0;
-}
-.skillsName{
+.skill-name{
   position: relative;
   color: var(--color_5);
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 5px;
+  span{
+    padding: 20px;
+  }
 
 }
 .progress {
@@ -42,21 +43,30 @@
   margin-bottom: 20px;
 
 }
-
-
 .progress-bar {
-  text-align: left;
   border-radius: 20px;
   transition: width 1s ease-in-out; /* Ensure transition is set */
   background-color: var(--color_3);
   margin-left: -5px ;
   width: 0; /* Initial width set to 0 for animation */
+}
 
-
+@media (max-width: 1200px ){
 
 }
 
+@media (max-width: 768px ){
 
+}
+@media (max-width: 480px ){
+  .hard-skill{
+    flex-direction: column;
+  }
+  .hard-skill-detail{
+    width: 90%;
+    margin: auto;
+  }
+}
 
 
 

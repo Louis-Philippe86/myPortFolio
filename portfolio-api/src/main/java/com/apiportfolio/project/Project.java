@@ -22,7 +22,7 @@ public class Project {
     @Lob
     private String description;
     @Lob
-    private String objective;
+    private String videoUrl;
     @Lob
     private String features;
     @Lob
@@ -57,11 +57,11 @@ public class Project {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getObjective() {
-		return objective;
+	public String getVideoUrl() {
+		return videoUrl;
 	}
-	public void setObjective(String objective) {
-		this.objective = objective;
+	public void setVideoUrl(String objective) {
+		this.videoUrl = objective;
 	}
 	public String getFeatures() {
 		return features;

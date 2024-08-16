@@ -21,33 +21,52 @@
 }
 
 .toggle-button {
-  float: right;
-  display: flex;
-  align-items: end;
-  justify-content: end;
+  float: left;
   flex-direction: column;
-  margin-right: 40px;
-  position: sticky;
-  margin-top: 30px;
-  margin-left: -2000px;
-  top: 30px;
+  position: fixed;
+  top: 80px;
+  left: 0px;
+  background-color: var(--color_6);
+  padding: 10px;
+  color: var(--color_4);
+  border-radius: 0 20px 20px 0;
   .iconify {
-    width: 4rem;
-    height: 4rem;
-    background-color: var(--color_3);
+    display: inline-block;
+    margin-right: 10px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 100%;
     z-index: 2;
     position: relative;
   }
-  .iconify:hover{
-    color: var(--color_3);
-    background-color: var(--color_5);
-    cursor: pointer;
+  .contact-me{
+    display: none;
+
   }
 }
+.toggle-button:hover{
+  cursor: pointer;
+  .contact-me{
+    display: inline-block;
+  }
+}
+
 .indexZ0{
   z-index: 0;
 }
 .indexZ1{
   z-index: 1;
 }
+
+
+@media (max-width: 480px){
+  .scrollInit {
+    margin-right: 5px;
+    bottom: 5px;
+  }
+  .toggle-button{
+    top: 9px;
+  }
+}
+
+

@@ -19,6 +19,7 @@ import {SharedModule} from "../shared/shared.module";
 })
 export class ProjectDetailComponent implements OnInit{
   project!: Project;
+  showSummary! : boolean
 
   constructor(private route: ActivatedRoute, private projectService : ProjectService) { }
 
@@ -29,4 +30,7 @@ export class ProjectDetailComponent implements OnInit{
     })
   }
 
+  toggleSummary() {
+    this.showSummary = !this.showSummary
+  }
 }

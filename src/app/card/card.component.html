@@ -9,7 +9,7 @@
         <p>{{card.description}}</p>
       </div>
 
-        <div class="cardFooter" *ngIf="card.languages && card.languages.length > 0">
+        <div class="card-project-footer" *ngIf="card.languages && card.languages.length > 0">
           <div class="divider"></div>
           <div class="language" *ngFor="let language of card.languages">
             <span class="iconify me-2" [attr.data-icon]="language.logo" data-inline="false" style="width: 2rem; height: 2rem;"></span>

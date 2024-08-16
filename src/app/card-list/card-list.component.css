@@ -1,0 +1,13 @@
+.card-section{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 689px) {
+  .card-section {
+    justify-content: center;
+  }
+
+}

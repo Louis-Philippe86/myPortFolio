@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import {SharedModule} from "../shared/shared.module";
 import {ProjectService} from "../services/project.service";
 import {Project} from "../models/Project";
+import {ModalService} from "../services/modal-service";
+import {ModalComponent} from "../modals/modal.component";
 
 
 
@@ -13,7 +15,8 @@ import {Project} from "../models/Project";
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    ModalComponent
   ],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css'],
@@ -25,11 +28,11 @@ export class TestComponent implements OnInit{
   project! : Project
 
   constructor(
-    private projectService : ProjectService) {
+    private projectService : ProjectService,private modal : ModalService) {
   }
 
   ngOnInit(): void {
-    this.projectService.getProjectById(2).subscribe((project: any) => {
+    this.projectService.getProjectById(1).subscribe((project: any) => {
       this.project = project;
     });
   }
@@ -37,4 +40,5 @@ export class TestComponent implements OnInit{
   toggleSummary() {
     this.showSummary = !this.showSummary
   }
+
 }
