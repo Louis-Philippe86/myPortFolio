@@ -3,13 +3,13 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {HardSkills} from "../models/HardSkills";
 import {Skill} from "../models/Skill";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillsService {
-
-  private apiUrl = 'http://localhost:8080/api/skills';
+  private apiUrl = environment.apiUrl+'/skills';
 
   constructor(private http: HttpClient) { }
 

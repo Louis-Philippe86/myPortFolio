@@ -11,12 +11,13 @@ Ce dépôt contient le code source de mon site portfolio, construit avec Angular
   - [Cloner le dépôt](#cloner-le-dépôt)
   - [Installation du front-end Angular](#installation-du-front-end-angular)
   - [Installation du back-end Spring Boot](#installation-du-back-end-spring-boot)
-- [Structure du projet](#structure-du-projet)
+  - [Création de la base de données](#création-de-la-base-de-données)
 - [Utilisation](#utilisation)
   - [Démarrer l'application Angular](#démarrer-lapplication-angular)
   - [Démarrer l'application Spring Boot](#démarrer-lapplication-spring-boot)
-- [Contribuer](#contribuer)
-- [Licence](#licence)
+- [Structure du projet](#structure-du-projet)
+  - [Organisation](#organisation)
+  - [Schéma de base de donnée](#schéma-de-base-de-donnée)
 
 ## Aperçu
 
@@ -26,7 +27,7 @@ Ce projet est une application web portfolio permettant de présenter mes projets
 
 - **Front-end** : Angular, TypeScript, HTML, CSS
 - **Back-end** : Spring Boot, Java
-- **Base de données** : (Indiquez votre base de données ici, par exemple PostgreSQL, MySQL)
+- **Base de données** : MySQL
 
 ## Prérequis
 
@@ -48,25 +49,48 @@ git clone https://github.com/Louis-Philippe86/myPortFolio.git
 
 ### Installation du front-end Angular
 ```bash
-cd myPortFolio
+cd myPortFolio/frontend
 npm install
 ````
 ### Installation du back-end Spring Boot
 ```bash
-cd myPortFolio/portfolio-api
+cd myPortFolio/backend
 mvn clean install
-mvn spring-boot:run
 ````
+### Création de la base de données
+- Utilisez le script pour creer la base de donnée
 
-### Structure du projet
-- myPortFolio  : Contient le code source Angular.
-- myPortFolio/portfolio-api : Contient le code source Spring Boot
+Répertoire :  _myPortFolio/script_
+
+- Configurez votre base de données dans le fichier application.properties.
+
+Répertoire :  _myPortFolio/backend/src/main/ressources_
+
+```bash
+spring.datasource.url=jdbc:mysql://localhost:5000/data_base_name
+spring.datasource.username=username
+spring.datasource.password=password_user
+````
 
 ## Utilisation
 ### Démarrer l'application Angular
 - Assurez-vous que vous êtes dans le répertoire frontend.
 - Démarrez le serveur de développement Angular :
 ```bash
-cd myPortFolio
+cd myPortFolio/frontend
 ng-serve
 ````
+### Démarrer l'application Spring Boot
+- Assurez-vous que vous êtes dans le répertoire backend.
+```bash
+cd myPortFolio/backend
+mvn spring-boot:run
+````
+
+## Structure du projet
+### Organisation
+- myPortFolio/frontend  : Contient le code source Angular.
+- myPortFolio/backend : Contient le code source Spring Boot
+
+### Schéma de base de donnée
+![bdd](frontend/src/assets/bddShéma.JPG)
