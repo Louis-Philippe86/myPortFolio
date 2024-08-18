@@ -5,7 +5,6 @@ import {NavigationEnd, Router, RouterLink, RouterLinkActive, RouterModule, Route
 import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {CardListComponent} from "./card-list/card-list.component";
-import {TestComponent} from "./test/test.component";
 import {SidebarComponent} from "./sidebar/sidebar.component";
 
 @Component({
@@ -21,7 +20,6 @@ import {SidebarComponent} from "./sidebar/sidebar.component";
     RouterLink,
     RouterLinkActive,
     CardListComponent,
-    TestComponent,
     SidebarComponent
   ],
   templateUrl: './app.component.html',
