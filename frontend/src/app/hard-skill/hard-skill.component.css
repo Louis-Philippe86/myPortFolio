@@ -45,15 +45,13 @@
 }
 .progress-bar {
   border-radius: 20px;
-  transition: width 1s ease-in-out; /* Ensure transition is set */
+  transition: width 1s ease-in-out;
   background-color: var(--color_3);
   margin-left: -5px ;
-  width: 0; /* Initial width set to 0 for animation */
+  width: 0;
 }
 
-@media (max-width: 1200px ){
-
-}
+/*****************Responsive***********************/
 
 @media (max-width: 768px ){
 

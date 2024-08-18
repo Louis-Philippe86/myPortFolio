@@ -6,9 +6,8 @@
   }
   @if(path === '/projects'){
     @for (project of cardsProject; track project.title){
-      <app-card [card]="project.card"/>
+      <app-card [card]="project.card"
+                [project]="project"/>
     }
   }
-
-
 </div>

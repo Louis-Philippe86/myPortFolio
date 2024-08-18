@@ -29,7 +29,6 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
   box-shadow:
     12.5px 12.5px 10px rgba(0, 0, 0, 0.061),
@@ -54,6 +53,7 @@
   transform: rotateY(180deg);
 }
 
+/***************Responsive*******************/
 @media (max-width: 500px ){
   .flip-card-front {
     cite{

@@ -1,24 +1,26 @@
-<div class="container">
-  <a [routerLink]="card.hrefUrl">
-    <div class="card">
-      <div class="card-header">
-        <img [src]=card.urlCardPicture [alt]=card.title />
-      </div>
-      <div class="card-body">
-        <h4>{{card.title}}</h4>
-        <p>{{card.description}}</p>
-      </div>
-
-        <div class="card-project-footer" *ngIf="card.languages && card.languages.length > 0">
-          <div class="divider"></div>
-          <div class="language" *ngFor="let language of card.languages">
-            <span class="iconify me-2" [attr.data-icon]="language.logo" data-inline="false" style="width: 2rem; height: 2rem;"></span>
-            <span class="">{{ language.name }}</span>
-          </div>
-        </div>
-
+<a [routerLink]="card.hrefUrl" >
+  <div class="card" >
+    <div class="card-header">
+      <img [src]=card.urlCardPicture [alt]=card.title />
     </div>
-  </a>
-</div>
+    <div class="card-body">
+      <h4>{{card.title}}</h4>
+      <p>{{card.description}}</p>
+    </div>
+    <div class="card-project-footer" *ngIf="card.languages && card.languages.length > 0">
+      <div *ngIf="project && project.githubLink" class="github-project-link">
+        <a [href]="project.githubLink" target="_blank" (click)="onGithubLinkClick($event)">
+          <span class="iconify" data-icon="mdi:github" data-inline="false"></span>
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div class="divider"></div>
+      <div class="language" *ngFor="let language of card.languages">
+        <span class="iconify me-2" [attr.data-icon]="language.logo" data-inline="false"></span>
+        <span class="">{{ language.name }}</span>
+      </div>
+    </div>
+  </div>
+</a>
 
 

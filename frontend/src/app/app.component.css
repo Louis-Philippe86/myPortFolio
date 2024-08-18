@@ -58,7 +58,7 @@
   z-index: 1;
 }
 
-
+/*****************Responsive*************************/
 @media (max-width: 480px){
   .scrollInit {
     margin-right: 5px;

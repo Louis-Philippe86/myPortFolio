@@ -1,16 +1,12 @@
-import { Component, ElementRef,  Input, OnInit, ViewChild} from '@angular/core';
-import {Card} from "./models/card";
+import { Component,Input, OnInit} from '@angular/core';
+import {Card} from "./models/Card";
 import {CommonModule, NgFor, ViewportScroller} from "@angular/common";
 import {NavigationEnd, Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet} from "@angular/router";
 import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {CardListComponent} from "./card-list/card-list.component";
-import {PitchComponent} from "./pitch/pitch.component";
 import {TestComponent} from "./test/test.component";
 import {SidebarComponent} from "./sidebar/sidebar.component";
-
-
-
 
 @Component({
   selector: 'app-root',
@@ -25,7 +21,6 @@ import {SidebarComponent} from "./sidebar/sidebar.component";
     RouterLink,
     RouterLinkActive,
     CardListComponent,
-    PitchComponent,
     TestComponent,
     SidebarComponent
   ],

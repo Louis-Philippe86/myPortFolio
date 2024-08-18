@@ -1,8 +1,8 @@
-
 a{
   text-decoration: none;
 }
 .card {
+  position: relative;
   margin: 10px;
   color: var(--color_5);
   border-radius: 10px;
@@ -32,20 +32,19 @@ a{
   background-color: var(--color_1);
   align-items: flex-start;
   padding: 10px;
-  min-height: 10rem;
+  height: 7.5rem;
   border-top: none;
+  h4{
+    font-size: 1.1rem;
+  }
   p{
-    font-size: 13px;
-    margin: 0 0 20px;
+    font-size: 0.8rem;
   }
 }
-
-
 .divider{
   border-top: 2px solid grey;
   width: 80%;
   margin: 0 auto 10px;
-
 }
 .card-project-footer {
   display: flex;
@@ -55,8 +54,11 @@ a{
   flex-wrap: wrap;
   padding: 10px;
   height: 8rem;
-  background-color: var(--color_1);
-
+  background-color: var(--color_1) !important;
+  .iconify{
+    width: 2rem;
+    height: 2rem;
+  }
   span {
     margin-right: 5px;
   }
@@ -67,11 +69,61 @@ a{
   margin-bottom: 20px;
   margin-top: 0;
 }
-
-
-
 .card:hover {
   transform: translateY(-10px);
+}
+
+.github-project-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  margin: auto;
+  padding: 5px;
+  color: var(--color_4);
+  background-color: var(--color_6);
+  border-radius: 30px;
+  width: 100px;
+  a{
+    color: var(--color_4);
+    z-index: 10;
+    text-decoration: none;
+    span{
+      font-size: 0.8rem;
+    }
+    .iconify{
+      margin-right: 5px;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+  a:hover{
+    cursor: pointer;
+  }
+
+}
+
+/*****************Responsive***********************/
+
+@media (max-width: 1200px) {
+  .card{
+    width: 250px;
+  }
+  .card-project-footer {
+    padding: 10px;
+    height: 8rem;
+    background-color: var(--color_1);
+    span {
+      margin-right: 5px;
+      font-size: 0.8rem;
+    }
+    .iconify{
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
 }
 
 

@@ -1,21 +1,24 @@
-<h1>Expériences professionnels</h1>
+<div class="main-title">
+  <h1>Expériences professionnels</h1>
+</div>
 <div class="pitchSection">
-  <p>
-  Dans cette section, vous découvrirez les différents postes que j'ai occupés jusqu'à présent.
-  </p>
+  <p>Dans cette section, vous découvrirez les différents postes que j'ai occupés jusqu'à présent.</p>
   <ul>
     <li>
-      J'ai mis en avant les <span>responsabilités</span> principales de chaque <span>rôle</span> que j'ai endossé, afin de vous donner une
-  vue d'ensemble claire et concise de <span>mon parcours professionnel</span>.
+      J'ai mis en avant les <span>responsabilités</span> principales de chaque <span>rôle</span>
+      que j'ai endossé, afin de vous donner une vue d'ensemble claire et concise de
+      <span>mon parcours professionnel</span>.
     </li>
     <li>
-      Chaque poste a été une opportunité d'apprendre et de contribuer de manière significative, enrichissant ainsi mon <span>expérience</span> et mes <span>compétences</span>.
+      Chaque poste a été une opportunité d'apprendre et de contribuer de manière significative,
+      enrichissant ainsi mon <span>expérience</span> et mes <span>compétences</span>.
     </li>
   </ul>
-
 </div>
+
 <div class="dividerTitle"></div>
 <div class="dividerTitle w-25"></div>
+
 <div class="work-experience-section">
   <div *ngFor="let work of works; let i = index " [ngClass]="{'pair' : i % 2 !== 0}" class="work-experience">
     <div class="card-work" >
@@ -38,8 +41,9 @@
         <span>- {{work.company.city}} -</span>
       </div>
     </div>
+  </div>
 </div>
-</div>
+
 
 
 

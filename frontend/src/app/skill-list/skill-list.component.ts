@@ -39,13 +39,11 @@ export class SkillListComponent implements OnInit{
   levelChoices! : {option : string, purcent : number}[]
   index : number = 3
 
-  //constructeur
   constructor(public datasService : DatasService, private skillService : SkillsService, private modalService : ModalService ) {}
 
   ngOnInit(): void {
     this.levelChoices = this.datasService.choice
     this.skillService.getSkills().subscribe((skills: any) => {
-
       for (let skill of skills){
         if(skill.skillType === 'framework'){
           this.frameworkList.push(skill)
@@ -65,9 +63,6 @@ export class SkillListComponent implements OnInit{
     this.modalContent = description
     this.modalService.open();
   }
-  closeModal(){
-    this.modalService.close()
-  }
 
   nextChoiceLevel() {
     if (this.index < this.levelChoices.length - 1) {
@@ -78,7 +73,6 @@ export class SkillListComponent implements OnInit{
   previousChoiceLevel() {
     if (this.index > 0) {
       this.index--;
-
     }
   }
 

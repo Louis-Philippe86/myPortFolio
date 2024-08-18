@@ -1,4 +1,6 @@
 <app-header/>
+
+<!--Coordonnées-->
   <div class="toggle-button indexZ1" (click)="toggleSidebar()">
     <span class="iconify" data-icon="icon-park-solid:me" data-inline="false"></span>
     <span class="contact-me">Contactez-moi !</span>
@@ -6,10 +8,14 @@
       <app-sidebar></app-sidebar>
     </div>
   </div>
+
 <router-outlet class="indexZ0"/>
+
+<!--ScrollUpButton-->
 <div class="scrollInit indexZ1">
   <i class=" fa-regular fa-circle-up fa-2x" (click)="scrollUp()"></i>
 </div>
+
 <app-footer />
 
 

@@ -19,5 +19,4 @@ import {SoftSkill} from "../models/SoftSkill";
 })
 export class SoftSkillComponent {
   @Input() skill! : SoftSkill
-
 }

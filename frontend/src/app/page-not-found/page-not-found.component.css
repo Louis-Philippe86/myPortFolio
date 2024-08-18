@@ -13,29 +13,19 @@
   background-color: var(--color_4);
   border-radius: 10px;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-.error-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.error-content p {
-  font-size: 1.2rem;
-}
-
-.error-content a {
-  color: var(--color_5);
-  text-decoration: none;
-}
-
-.error-content a:hover {
-  text-decoration: underline;
-}
-
-.toggle-button {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  h1{
+    color: var(--color_6) !important;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  p{
+    font-size: 1.2rem;
+  }
+  a{
+    color: var(--color_5);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }

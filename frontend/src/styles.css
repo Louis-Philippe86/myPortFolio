@@ -19,7 +19,13 @@ h1{
   color: var(--color_4) !important;
   font-size: 3rem !important;
 }
-
+.main-title{
+  text-align: center;
+  width: 90vw;
+  margin: auto;
+  font-weight: 600;
+  color: var(--color_4);
+}
 .dividerTitle {
   height: 2px;
   width: 50vw;
@@ -30,7 +36,7 @@ h1{
 body {
   font-family : 'Montserrat', sans-serif !important;
   text-align: justify !important;
-  background-image: url("./assets/test.jpg");
+  background-image: url("assets/backgroundImage.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,6 +61,7 @@ footer{
   margin: auto auto 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: var(--color_5);
+
   span{
     font-weight: 750;
   }
@@ -110,8 +117,16 @@ footer{
   body{
     text-align: left !important;
   }
-}
 
+}
+@media (max-width: 482px ) {
+  .main-title {
+    width: 100vw;
+    h1{
+      font-size: 2.5rem !important;
+    }
+  }
+}
 
 
 

@@ -20,10 +20,12 @@ export class HardSkillComponent implements AfterViewInit{
 
   @ViewChild('container', { static: true }) container!: ElementRef;
 
+  //Attente du chargement de la page avant animation des progress-bar
   ngAfterViewInit() {
-    setTimeout(() => this.animateProgressBars(), 500);
+    setTimeout(() => this.animateProgressBars(), 1000);
   }
 
+  //animation des progress-bar
   animateProgressBars() {
     const bars = this.container.nativeElement.querySelectorAll('.progress-bar');
     bars.forEach((bar: HTMLElement) => {

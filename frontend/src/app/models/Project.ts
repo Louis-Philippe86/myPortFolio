@@ -1,4 +1,4 @@
-import {Card} from "./card";
+import {Card} from "./Card";
 
 export class Project{
   constructor(
@@ -10,6 +10,7 @@ export class Project{
     public features : string,
     public progress : string,
     public result : string,
+    public githubLink : string,
     public card : Card,
   ) {
   }

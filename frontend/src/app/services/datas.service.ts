@@ -24,7 +24,7 @@ export class DatasService {
     new PersonalData("Permis B","tdesign:map-location"),
     new PersonalData("louis.philippe.coronas@gmail.com","octicon:mail-16","mailto:louis.philippe.coronas@gmail.com"),
     new PersonalData("Louis-Philippe CORONAS","mdi:linkedin","https://www.linkedin.com/in/louis-philippe-coronas-a90a6620b"),
-    new PersonalData("Louis-Philippe86","mdi:github","https://github.com/Louis-Philippe86/PorteFolio"),
+    new PersonalData("Louis-Philippe86","mdi:github","https://github.com/Louis-Philippe86"),
   ]
 
 

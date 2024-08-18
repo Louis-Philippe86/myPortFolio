@@ -30,6 +30,7 @@ public class Project {
     @OneToOne
     @JoinColumn(name = "card_id", referencedColumnName = "id")
     private Card card;
+    private String githubLink;
     
 	public Long getId() {
 		return id;
@@ -85,6 +86,11 @@ public class Project {
 	public void setCard(Card card) {
 		this.card = card;
 	}
-    
+    public String getGithubLink() {
+        return githubLink;
+    }
+    public void setGithubLink(String githubLink) {
+        this.githubLink = githubLink;
+    }
     
 }

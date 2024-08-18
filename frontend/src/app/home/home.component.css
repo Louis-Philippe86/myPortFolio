@@ -1,1 +1,76 @@
+.backgroundPitch{
+  background-image: url("/assets/pitchImage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  height: 25vw;
+  width: 70vw;
+  margin : 80px auto 80px;
+
+}
+
+.textPitch{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 20vw;
+  position: absolute;
+  left: 40%;
+  backdrop-filter: blur(30px);
+  padding: 10px;
+  margin: 2.5vw;
+  border-radius: 10px;
+  color: var(--color_6);
+  text-align: left;
+  h3{
+    font-size: 2.1vw;
+  }
+  p{
+    font-size: 1.1vw;
+  }
+}
+
+/*****************Responsive***********************/
+
+@media (max-width: 1000px) {
+  .backgroundPitch{
+    width: 90vw;
+    height: 35vw;
+  }
+  .textPitch{
+    left: 30%;
+    height: 30vw;
+    h3{
+      font-size: 3vw;
+    }
+    p{
+      font-size: 2vw;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .backgroundPitch{
+    width: 90vw;
+    height: 65vw;
+    margin : 40px auto 40px;
+  }
+  .textPitch{
+    width: 85vw;
+    height: 60vw;
+    margin: auto;
+    top: 2.5vw;
+    left: 2.5vw;
+    h3{
+      font-size: 4.5vw;
+    }
+    p{
+      font-size: 3.5vw;
+      margin-bottom: 0;
+    }
+  }
+}
+
 
