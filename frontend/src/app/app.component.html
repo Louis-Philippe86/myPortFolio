@@ -3,7 +3,7 @@
 <!--Coordonnées-->
   <div class="toggle-button indexZ1" (click)="toggleSidebar()">
     <span class="iconify" data-icon="icon-park-solid:me" data-inline="false"></span>
-    <span class="contact-me">Contactez-moi !</span>
+    <span *ngIf="showSidebar" class="contact-me">Contactez-moi !</span>
     <div *ngIf="showSidebar" class="sidebar ">
       <app-sidebar></app-sidebar>
     </div>

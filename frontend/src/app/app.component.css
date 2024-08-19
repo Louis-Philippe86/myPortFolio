@@ -41,7 +41,6 @@
   }
   .contact-me{
     display: none;
-
   }
 }
 .toggle-button:hover{
@@ -67,6 +66,7 @@
   .toggle-button{
     top: 9px;
   }
+
 }
 
 
