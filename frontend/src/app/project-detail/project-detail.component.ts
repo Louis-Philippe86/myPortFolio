@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {ProjectService} from "../services/project.service";
 import {Project} from "../models/Project";
 import {NgForOf, NgIf} from "@angular/common";
@@ -11,7 +11,8 @@ import {SharedModule} from "../shared/shared.module";
   imports: [
     NgIf,
     SharedModule,
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   templateUrl: './project-detail.component.html',
   styleUrl: './project-detail.component.css'

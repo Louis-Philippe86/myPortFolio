@@ -24,12 +24,12 @@
     @if (showSummary){
       <div class="body-summary">
         <div class="dividerTitle w-100"></div>
-        <a href="#section1" class="anchor-link">Description</a>
-        <a href="#section2" class="anchor-link">Objectif</a>
-        <a href="#section3" class="anchor-link">Mise en oeuvre</a>
-        <a href="#section4" class="anchor-link">Résultats</a>
+        <a [routerLink]="['/projects',project.id]" fragment="section1">Description</a>
+        <a [routerLink]="['/projects',project.id]" fragment="section2">Objectif</a>
+        <a [routerLink]="['/projects',project.id]" fragment="section3">Mise en oeuvre</a>
+        <a [routerLink]="['/projects',project.id]" fragment="section4">Résultats</a>
         @if(project.videoUrl !== null){
-        <a href="#section5" class="anchor-link">Démonstration</a>
+          <a [routerLink]="['/projects',project.id]" fragment="section5">Démonstration</a>
         }
       </div>
     }

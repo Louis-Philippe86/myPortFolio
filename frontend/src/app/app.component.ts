@@ -36,23 +36,16 @@ export class AppComponent implements OnInit{
 
 
   ngOnInit() {
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
-        const currentUrl = this.router.url;
-        const anchorLinks = document.querySelectorAll('.anchor-link');
-
-        let isAnchorNavigation = false;
-        anchorLinks.forEach((link: Element) => {
-          if ((link as HTMLAnchorElement).href.endsWith(currentUrl)) {
-            isAnchorNavigation = true;
+      this.router.events.subscribe((event: any) => {
+        if (event instanceof NavigationEnd) {
+          const fragment = this.router.routerState.snapshot.root.fragment;
+          if (fragment) {
+            this.viewportScroller.scrollToAnchor(fragment);
+          } else {
+            this.scrollUp();
           }
-        });
-
-        if (!isAnchorNavigation) {
-          this.scrollUp();
         }
-      }
-    });
+      });
   }
 
   scrollUp(){
