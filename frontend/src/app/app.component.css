@@ -21,11 +21,12 @@
 }
 
 .toggle-button {
+  cursor: pointer;
   float: left;
   flex-direction: column;
   position: fixed;
   top: 80px;
-  left: 0px;
+  left: 0;
   background-color: var(--color_6);
   padding: 10px;
   color: var(--color_4);
@@ -39,16 +40,8 @@
     z-index: 2;
     position: relative;
   }
-  .contact-me{
-    display: none;
-  }
 }
-.toggle-button:hover{
-  cursor: pointer;
-  .contact-me{
-    display: inline-block;
-  }
-}
+
 
 .indexZ0{
   z-index: 0;
@@ -58,6 +51,7 @@
 }
 
 /*****************Responsive*************************/
+
 @media (max-width: 480px){
   .scrollInit {
     margin-right: 5px;

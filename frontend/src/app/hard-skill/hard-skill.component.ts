@@ -22,7 +22,7 @@ export class HardSkillComponent implements AfterViewInit{
 
   //Attente du chargement de la page avant animation des progress-bar
   ngAfterViewInit() {
-    setTimeout(() => this.animateProgressBars(), 4000);
+    setTimeout(() => this.animateProgressBars(), 4500);
   }
 
   //animation des progress-bar
