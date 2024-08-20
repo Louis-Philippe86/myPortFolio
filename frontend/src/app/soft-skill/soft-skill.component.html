@@ -1,11 +1,11 @@
 <div class="flip-card">
   <div  class="flip-card-inner">
-    <div class="flip-card-front p-1 pt-2 d-flex flex-column">
+    <div class="flip-card-front">
       <p class="fw-bold mb-1">{{skill.title}}</p>
       <cite class="mt-0">"{{skill.citation}}"</cite>
     </div>
-    <div class="flip-card-back d-flex justify-content-center align-items-center">
-      <p class="p-1">{{skill.description  | truncateText : 80}}</p>
+    <div class="flip-card-back">
+      <p class="p-1">{{skill.description  | truncateText : truncateLength}}</p>
     </div>
   </div>
 </div>

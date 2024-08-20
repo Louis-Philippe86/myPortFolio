@@ -37,6 +37,10 @@
 
 
 .flip-card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: var(--color_3);
   border: 2px solid var(--color_1);
   color: var(--color_2);
@@ -46,6 +50,9 @@
 }
 
 .flip-card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--color_1);
   border: 2px solid var(--color_3);
   color: var(--color_2);
@@ -64,6 +71,10 @@
     height: 50px;
     width: 100px;
     font-size: 0.7rem;
+  }
+
+  .flip-card-back {
+    font-size: 0.5rem;
   }
 
 }
