@@ -3,13 +3,12 @@ import {ModalComponent} from "../modals/modal.component";
 import {SharedModule} from "../shared/shared.module";
 import {SoftSkillComponent} from "../soft-skill/soft-skill.component";
 import {RouterOutlet} from "@angular/router";
-import {NgForOf, NgOptimizedImage} from "@angular/common";
+import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
 import {DatasService} from "../services/datas.service";
 import {HardSkillComponent} from "../hard-skill/hard-skill.component";
-import {HardSkills} from "../models/HardSkills";
-import {SoftSkill} from "../models/SoftSkill";
 import {SkillsService} from "../services/skills.service";
 import {ModalService} from "../services/modal-service";
+import {LoadingComponent} from "../loading/loading.component";
 
 
 @Component({
@@ -22,18 +21,21 @@ import {ModalService} from "../services/modal-service";
     SoftSkillComponent,
     NgOptimizedImage,
     NgForOf,
-    HardSkillComponent
+    HardSkillComponent,
+    LoadingComponent,
+    NgIf
   ],
   templateUrl: './skill-list.component.html',
   styleUrl: './skill-list.component.css'
 })
 export class SkillListComponent implements OnInit{
-  @Input() softSkillsList : SoftSkill[] = []
-  @Input() languageSkills : HardSkills[] =[]
-  @Input() frameworkList : HardSkills[] = []
-  @Input() otherList : HardSkills[] = []
+  @Input() softSkillsList : any[] = []
+  @Input() languageSkills : any[] =[]
+  @Input() frameworkList : any[] = []
+  @Input() otherList : any[] = []
   modalTitle! : string
   modalContent! : string
+  isLoading : boolean = true
 
   //Jauge de test
   levelChoices! : {option : string, purcent : number}[]
@@ -43,21 +45,8 @@ export class SkillListComponent implements OnInit{
 
   ngOnInit(): void {
     this.levelChoices = this.datasService.choice
-    this.skillService.getSkills().subscribe((skills: any) => {
-      for (let skill of skills){
-        if(skill.skillType === 'framework'){
-          this.frameworkList.push(skill)
-        }else if(skill.skillType === 'language'){
-          this.languageSkills.push(skill)
-        }else if(skill.skillType === 'softskill'){
-          this.softSkillsList.push(skill)
-        }else if(skill.skillType === 'other'){
-          this.otherList.push(skill)
-        }
-      }
-    });
+    this.loadData()
   }
-
   openModal(title : string, description : string) {
     this.modalTitle = title
     this.modalContent = description
@@ -76,4 +65,29 @@ export class SkillListComponent implements OnInit{
     }
   }
 
+  private loadData() {
+    this.skillService.getSkills().subscribe({
+
+      next: (skills) => {
+        for (let skill of skills) {
+          if (skill.skillType === 'framework') {
+            this.frameworkList.push(skill);
+          } else if (skill.skillType === 'language') {
+            this.languageSkills.push(skill);
+          } else if (skill.skillType === 'softskill') {
+            this.softSkillsList.push(skill);
+          } else if (skill.skillType === 'other') {
+            this.otherList.push(skill);
+          }
+        }
+        this.isLoading = false
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des données', error);
+        this.isLoading = false;  // Arrête le chargement même en cas d'erreur
+        // TODO: Gérer une page d'erreur ou afficher un message d'erreur à l'utilisateur
+      }
+    });
+
+  }
 }

@@ -13,9 +13,8 @@ export class CardService {
 
   constructor(private http: HttpClient) { }
 
-  getCards(): Observable<Card> {
-    return this.http.get<Card>(this.apiUrl, {responseType: "json"})
-
+  getCards(): Observable<Card[]> {
+    return this.http.get<Card[]>(this.apiUrl, {responseType: "json"})
   }
 
 }

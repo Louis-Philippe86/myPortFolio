@@ -1,13 +1,16 @@
-<div class="card-section">
-  @if(path === '/'){
+<div *ngIf="isLoading">
+  <app-loading/>
+</div>
+<div *ngIf="!isLoading" >
+  <div *ngIf="path === '/'" class="card-section">
     @for (card of cardsMainMenu; track card.title){
       <app-card [card]="card"/>
     }
-  }
-  @if(path === '/projects'){
+  </div>
+  <div *ngIf="path === '/projects'" class="card-section">
     @for (project of cardsProject; track project.title){
       <app-card [card]="project.card"
                 [project]="project"/>
     }
-  }
+  </div>
 </div>

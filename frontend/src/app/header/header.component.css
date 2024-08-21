@@ -5,14 +5,16 @@
   align-items: center;
   width: 95vw;
   margin: auto;
-}
 
+}
 .header-title{
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   font-size: 1.4rem ;
+  text-decoration: none;
+  color: var(--color_1);
   .iconify{
     margin-right: 10px;
     width: 2rem;

@@ -16,6 +16,7 @@ export class ProjectService {
   getProjects(): Observable<Project> {
     return this.http.get<Project>(this.apiUrl, {responseType: "json"})
   }
+
   getProjectById(id : number) : Observable<Project>{
     return this.http.get<Project>(`${this.apiUrl}/${id}`,{responseType : "json"})
   }
