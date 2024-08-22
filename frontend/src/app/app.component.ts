@@ -1,4 +1,4 @@
-import { Component,Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Card} from "./models/Card";
 import {CommonModule, NgFor, ViewportScroller} from "@angular/common";
 import {NavigationEnd, Router, RouterLink, RouterLinkActive, RouterModule, RouterOutlet} from "@angular/router";
@@ -6,6 +6,7 @@ import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {CardListComponent} from "./card-list/card-list.component";
 import {SidebarComponent} from "./sidebar/sidebar.component";
+import {MenuToggleService} from "./services/menu-toggle.service";
 
 @Component({
   selector: 'app-root',
@@ -31,7 +32,8 @@ export class AppComponent implements OnInit{
 
   constructor(
     private router: Router,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private menuService : MenuToggleService,
   ) {}
 
 
@@ -52,7 +54,15 @@ export class AppComponent implements OnInit{
     this.viewportScroller.scrollToPosition([0,0])
   }
 
-  toggleSidebar() {
+  toggleSidebar(event : Event) {
     this.showSidebar = !this.showSidebar;
+    event.stopPropagation()
+  }
+  @HostListener('document:click', ['$event'])
+  closeMenu(event: Event) {
+    const isClickInsideMenu = this.menuService.closeMenu(event, 'sidebar');
+    if (!isClickInsideMenu) {
+      this.showSidebar = false;
+    }
   }
 }

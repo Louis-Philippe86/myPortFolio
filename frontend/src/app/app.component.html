@@ -1,7 +1,7 @@
 <app-header/>
 
 <!--Coordonnées-->
-  <div class="toggle-button indexZ1" (click)="toggleSidebar()">
+  <div class="toggle-button indexZ1" (click)="toggleSidebar($event)">
     <span class="iconify" data-icon="icon-park-solid:me" data-inline="false"></span>
     <span *ngIf="showSidebar" class="pe-4">Contactez-moi !</span>
     <div *ngIf="showSidebar" class="sidebar ">

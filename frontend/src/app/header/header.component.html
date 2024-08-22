@@ -4,30 +4,30 @@
       <span class="iconify" data-icon="catppuccin:folder-turbo" data-inline="false"></span>
       <span class="title">Portfolio</span>
     </a>
-    <div (click)="toggleMenuNav()" class="small-screen-menu">
+    <div (click)="toggleMenuNav($event)" class="small-screen-menu">
       <span class="iconify" data-icon="heroicons:bars-arrow-down" data-inline="false"></span>
       <span>Menu</span>
     </div>
     <nav>
       <ul  [ngClass]="{'small-screen-menu-content' : menuOpen, 'nav' : !menuOpen }">
         <li class="nav-item" (click)="closeMenuNav()">
-          <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">Home</a>
+          <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">Accueil</a>
         </li>
         <li class="nav-item" (click)="closeMenuNav()">
-          <a routerLink="/skills" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">Skills</a>
+          <a routerLink="/skills" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">Compétences</a>
         </li>
         <li class="nav-item" (click)="closeMenuNav()">
-          <a routerLink="/career" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">Career</a>
+          <a routerLink="/career" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">Carrière</a>
         </li>
         <li class="nav-item" (click)="closeMenuNav()">
-          <a routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">Projects</a>
+          <a routerLink="/projects" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">Projets</a>
         </li>
         <li class="nav-item" (click)="closeMenuNav()">
-          <a routerLink="/introduction" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">About Me</a>
+          <a routerLink="/introduction" routerLinkActive="active" ariaCurrentWhenActive="page" class="nav-link text-light">Présentation</a>
         </li>
       </ul>
     </nav>
-    <div class="social-link" (click)="closeMenuNav()">
+    <div class="social-link">
       <a href="https://www.linkedin.com/in/louis-philippe-coronas-a90a6620b" target="_blank" class="text-light mx-2">
         <i class="fab fa-linkedin"></i>
       </a>

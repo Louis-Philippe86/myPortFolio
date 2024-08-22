@@ -16,18 +16,18 @@
   justify-content: space-evenly;
   height: 20vw;
   position: absolute;
-  left: 40%;
+  left: 35%;
   backdrop-filter: blur(30px);
   padding: 10px;
   margin: 2.5vw;
   border-radius: 10px;
   color: var(--color_6);
-  text-align: left;
+  text-align: justify;
   h3{
     font-size: 2.1vw;
   }
   p{
-    font-size: 1.1vw;
+    font-size: 1vw;
   }
 }
 
@@ -46,7 +46,7 @@
       font-size: 3vw;
     }
     p{
-      font-size: 2vw;
+      font-size: 1.5vw;
       margin-bottom: 0;
     }
   }
@@ -65,10 +65,10 @@
     top: 2.5vw;
     left: 2.5vw;
     h3{
-      font-size: 4.5vw;
+      font-size: 4.8vw;
     }
     p{
-      font-size: 3.5vw;
+      font-size: 2.5vw;
       margin-bottom: 0;
     }
   }

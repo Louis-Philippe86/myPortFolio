@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import {ProjectService} from "../services/project.service";
 import {Project} from "../models/Project";
 import {NgForOf, NgIf} from "@angular/common";
 import {SharedModule} from "../shared/shared.module";
 import {LoadingComponent} from "../loading/loading.component";
+import {MenuToggleService} from "../services/menu-toggle.service";
 
 @Component({
   selector: 'app-project-detail',
@@ -25,7 +26,10 @@ export class ProjectDetailComponent implements OnInit{
   showSummary! : boolean;
   isLoading: boolean = true;
 
-  constructor(private route: ActivatedRoute, private projectService : ProjectService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private projectService : ProjectService,
+    private menuService : MenuToggleService) { }
 
   ngOnInit(): void {
     this.projectId = Number(this.route.snapshot.paramMap.get('id'));
@@ -46,7 +50,15 @@ export class ProjectDetailComponent implements OnInit{
       }
     });
   }
-  toggleSummary() {
+  toggleSummary(event : Event) {
     this.showSummary = !this.showSummary
+    event.stopPropagation()
+  }
+  @HostListener('document:click', ['$event'])
+  closeMenu(event: Event) {
+    const isClickInsideMenu = this.menuService.closeMenu(event, 'body-summary');
+    if (!isClickInsideMenu) {
+      this.showSummary = false;
+    }
   }
 }
