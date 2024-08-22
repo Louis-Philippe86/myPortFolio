@@ -18,7 +18,7 @@ export class DatasService {
   ]
 
   PersonalData : PersonalData[] = [
-    new PersonalData("<strong>Mon CV</strong>","pepicons-pop:cv-circle-filled","./assets/documents/cv.pdf"),
+    new PersonalData("<strong>Mon CV</strong>","pepicons-pop:cv-circle-filled","./assets/documents/CV_CORONAS_Louis-Philippe_DevFS.pdf"),
     new PersonalData("Francueil","tdesign:map-location"),
     new PersonalData("06-73-07-30-69","gridicons:phone"),
     new PersonalData("24 Juin 1986","icon-park-outline:birthday-cake"),
